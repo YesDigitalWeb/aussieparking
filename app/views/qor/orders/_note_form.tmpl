@@ -1,0 +1,55 @@
+<article class="article hidden" id="note-form" state="new">
+  <form action="/admin/notes" class="form">
+    <section class="section top">
+      <h2>Notes</h2>
+      <a class="new-btn new-note" href="javascript:;"></a>
+      <a href="javascript:;" class="close"></a>
+    </section>
+
+    <section class="section fields hidden create-fields">
+      <textarea name="Note"></textarea>
+      <input class="record-id" type="hidden" name="OrderId">
+      <div class="btn-wrap clearfix">
+        <label class="fl change-amount"><span>Changed Amount:&nbsp;&nbsp;$</span><input name="ChangedAmount" type="number" value="0" step="1"></label>
+        <button type="submit" class="btn sub fr" data-processing-text="Processing…" data-original-text="SAVE">SAVE</button>
+        <button type="button" class="btn sub fr cancel">CANCEL</button>
+      </div>
+    </section>
+
+    <section class="section note-tmpl notes-wrapper">
+      <div class="note-item">
+        <section class="clearfix note-action section">
+          <strong class="note-editor"></strong>
+          <span class="note-date"></span>
+        </section>
+
+        <section class="section note-contents">
+          <pre class="pre"></pre>
+          <label class="change-amount-text">
+            <span>Changed Amount:&nbsp;&nbsp;$</span>
+            <em class="amount-text"></em>
+          </label>
+        </section>
+
+        <section class="hidden edit-area-wrapper section">
+          <textarea id="" class="edit-area"></textarea>
+
+          <div class="add-explanation">
+            <label>Add Explanation</label>
+            <textarea id="" class="j-explanation-area"></textarea>
+          </div>
+
+          <div class="btn-wrap clearfix">
+            <label class="fl change-amount">
+              <span>Changed Amount:&nbsp;&nbsp;$</span>
+              <input type="number" value="0" step="1">
+            </label>
+
+            <button type="button" class="btn sub fr save-edit" data-processing-text="Processing…" data-original-text="SAVE">SAVE</button>
+            <button type="button" class="btn sub fr cancel-edit">CANCEL</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </form>
+</article>

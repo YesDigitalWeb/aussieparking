@@ -1,0 +1,37 @@
+{{define "booking_frame"}}
+<article id="order-frame-wrapper" class="border-box hidden">
+  <header class="header tab-headers">
+    <ol class="clearfix">
+      <li class="fl">
+        <a class="tab cur" href="javascript:;">Enter Info</a>
+      </li>
+      <li class="fl">
+        <a class="tab" href="javascript:;">Car Detailing</a>
+      </li>
+      <li class="fl">
+        <a class="tab" href="javascript:;">Confirm Input</a>
+      </li>
+      <li class="fl payment-tab-wrap">
+        <a class="tab" href="javascript:;" id="payment-tab">Payment</a>
+      </li>
+    </ol>
+  </header>
+  <section class="section tab-page cur">
+    {{template "booking_form_info" .}}
+  </section>
+  <section class="section tab-page next">
+    {{template "booking_form_clean" .}}
+  </section>
+  <section class="section tab-page">
+    {{template "booking_confirm"}}
+  </section>
+  <section class="section tab-page">
+    {{template "booking_payment"}}
+  </section>
+
+  <section class="j-frame-loading section loading hidden transition" style="height:90%">
+    <img src="/img/loader.gif">
+    <strong>PROCESSING REQUEST…</strong>
+  </section>
+</article>
+{{end}}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Normal notation mode</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Backend" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Dashboard" sketch:type="MSArtboardGroup" transform="translate(-893.000000, -19.000000)" fill="#FFFFFF">
+            <g id="Top-Menu-Bar-2" sketch:type="MSLayerGroup" transform="translate(32.000000, 18.000000)">
+                <g id="Icon-Buttons" transform="translate(646.000000, 0.000000)" sketch:type="MSShapeGroup">
+                    <g id="Normal-notation-mode" transform="translate(214.000000, 2.000000)">
+                        <path d="M2,6 L2,8 L19,8 L19,6" id="Path-3"></path>
+                        <path d="M2,2 L2,4 L19,4 L19,2" id="Path-2"></path>
+                        <path d="M2.87358365,7.92691905 L2.87358365,14.4872945 L-0.5,11.2071068 L2.87358365,7.92691905 Z M5.41987897,7.92691905 L5.41987897,14.4872945 L22.9142136,14.4872945 L22.9142136,7.92691905 L5.41987897,7.92691905 Z" id="pen" stroke="#009688" stroke-width="1.5" stroke-linejoin="bevel" transform="translate(11.207107, 11.207107) rotate(-45.000000) translate(-11.207107, -11.207107) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

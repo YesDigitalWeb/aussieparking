@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="13px" height="16px" viewBox="0 0 13 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Delete</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Backend" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Pages" sketch:type="MSArtboardGroup" transform="translate(-989.000000, -219.000000)" fill-opacity="0.540000021" fill="#000000">
+            <g id="Pages-List" sketch:type="MSLayerGroup" transform="translate(-2482.000000, 120.000000)">
+                <g id="Table-Body-Line-2" transform="translate(0.000000, 95.000000)" sketch:type="MSShapeGroup">
+                    <g id="Icon-Buttons-5" transform="translate(0.000000, 1.000000)">
+                        <path d="M3472.99558,19 C3472.44574,19 3472,18.544239 3472,17.9975267 L3472,7 L3483,7 L3483,17.9975267 C3483,18.5511774 3482.55516,19 3482.00442,19 L3472.99558,19 Z M3471.9985,5 C3471.44704,5 3471,5.44386482 3471,6 L3471,7 L3484,7 L3484,6 C3484,5.44771525 3483.55251,5 3483.0015,5 L3471.9985,5 Z M3475.99981,3 C3475.44763,3 3475,3.44386482 3475,4 L3475,5 L3480,5 L3480,4 C3480,3.44771525 3479.55628,3 3479.00019,3 L3475.99981,3 Z" id="Delete"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,28 @@
+{{define "booking_form_rates"}}
+  <form id="book-rates" class="form" action="/order" method="post">
+    <section class="section fields-wrapper">
+      <h2>Check Parking Rates</h2>
+      {{template "booking_fields_time" .}}
+      {{template "booking_fields_kind"}}
+
+      <div class="clear note">
+        <small>Aussie Parking’s trading hours operates to QLD time (NOT Daylight Savings)</small>
+      </div>
+    </section>
+
+    <section class="section cost-wrapper clearfix">
+      <div class="cost-inner fl">
+        <em>Total Cost:</em>
+        {{template "booking_order_cost" .CurrentOrder}}
+      </div>
+      <div class="btn-wrap fr">
+        <button class="btn" type="submit" data-processing-text="Processing…" data-original-text="BOOK THIS">BOOK THIS</button>
+      </div>
+    </section>
+
+    <section class="section loading hidden transition">
+      <img src="/img/loader.gif">
+      <strong>PROCESSING REQUEST…</strong>
+    </section>
+  </form>
+{{end}}

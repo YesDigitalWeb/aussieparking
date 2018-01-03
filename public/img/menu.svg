@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="12px" viewBox="0 0 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>menu</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Frontend" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="TOP-•-BOOKINGS-(mobile)" sketch:type="MSArtboardGroup" transform="translate(-19.000000, -46.000000)">
+            <g id="app-bar" sketch:type="MSLayerGroup">
+                <g id="menu" transform="translate(28.000000, 52.000000) scale(1, -1) translate(-28.000000, -52.000000) translate(16.000000, 40.000000)" sketch:type="MSShapeGroup">
+                    <path d="M24,0 L0,0 L0,24 L24,24 L24,0 Z" id="bounds"></path>
+                    <path d="M3,6 L21,6 L21,8 L3,8 L3,6 L3,6 Z M3,11 L21,11 L21,13 L3,13 L3,11 L3,11 Z M3,18 L3,16 L21,16 L21,18 L3,18 L3,18 Z" id="Shape" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

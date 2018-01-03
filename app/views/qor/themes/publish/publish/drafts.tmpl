@@ -1,0 +1,71 @@
+<div id="drafts" class="clearfix">
+  <div class="wrapper">
+    <form method="POST">
+
+      <div class="publish-layer">
+        <div class="btn-wrapper clearfix">
+          <button type="submit" class="btn red fr" data-confirm="Are you sure?" name="publish_type" value="discard">DISCARD</button>
+          <button type="submit" class="btn cyan fr" data-confirm="Are you sure?" name="publish_type" value="publish">PUBLISH</button>
+        </div>
+      </div>
+
+      {{range $result := .Result}}
+        {{$res := $result.Resource}}
+        {{$records := $result.Value}}
+        <article class="article table-item-wrapper">
+          <section class="section filter-wrapper">
+            <div class="wrapper">
+              <h2>DRAFTS</h2>
+            </div>
+          </section>
+
+          <section class="section table-wrapper">
+            <table class="table" state="list">
+              <thead class="thead">
+                <tr>
+                  <th class="th">
+                    <label>
+                      <input class="qor-check-all" type="checkbox">
+                      <span>{{$res.Name}}</span>
+                    </label>
+                  </th>
+                  {{range $meta := (index_metas $res)}}
+                  <th class="th">{{$meta.Label}}</th>
+                  {{end}}
+                  <th class="th">Actions</th>
+                </tr>
+              </thead>
+
+              <tbody class="tbody">
+                {{range $record := $records}}
+                {{$key := (printf "%s__%v" $res.ToParam (primary_key_of $record))}}
+                <tr id={{$key}} class="draft-item record-item tr transition">
+                  <td class="selector td">
+                    <label>
+                      <input type="checkbox" name="checked_ids[]" value="{{$key}}"/>
+                    </label>
+                  </td>
+                  {{range $index, $meta := index_metas $res}}
+                  {{$text := value_of $record $meta}}
+                  <td class="td">
+                    {{$text}}
+                  </td>
+                  {{end}}
+                  <td class="td diff"><a data-toggle="qor.comparator" data-remote="publishes/diff/{{$key}}" href="javascript:void(0);">View Diff</a></td>
+                </tr>
+                {{end}}
+              </tbody>
+            </table>
+          </section>
+        </article>
+      {{end}}
+
+    </form>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal animated fadeIn hidden" id="diffModal" tabindex="-1" role="dialog" aria-labelledby="diffModalLabel" aria-hidden="true">
+  <div class="modal-content animated slideInDown"></div>
+</div>

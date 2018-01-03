@@ -1,0 +1,35 @@
+{
+	"host": "localhost:7000",
+
+	"mail": {
+		"info": "",
+		"admin": "",
+		"bookings": "",
+
+		"host": "smtp.sendgrid.net",
+		"port": ":25",
+		"username": "",
+		"password": ""
+	},
+
+	"MailChimpApiKey": "API key",
+	"MailChimpListName": "account",
+
+	"db": {
+		"name": "aussie_parking",
+		"user": "root",
+		"password": ""
+	},
+
+	"cookie": {
+		"userkey": "",
+		"adminkey": ""
+	},
+
+	"paypal": {
+		"Gateway":  "https://pilot-payflowpro.paypal.com",
+		"Partner":  "PayPal",
+		"User":     "user",
+		"Password": "password"
+	}
+}

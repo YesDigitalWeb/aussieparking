@@ -1,0 +1,37 @@
+{{define "content"}}
+<article id="contact-us" class="article wrapper clearfix">
+  <h1 class="clear">Contact Us<em>* All fields are required.</em></h1>
+  <form action="/contact_us" method="post" class="fl form">
+    <div class="field-wrap fl">
+      <label>Name</label>
+      <input required type="text" name="Name" placeholder="Enter full name">
+    </div>
+
+    <div class="field-wrap fl">
+      <label>Phone</label>
+      <input required type="text" name="Phone" placeholder="Enter phone number">
+    </div>
+
+    <div class="field-wrap fl">
+      <label>Email</label>
+      <input required type="text" name="Email" placeholder="Enter email address">
+    </div>
+
+    <div class="field-wrap clear">
+      <label>Message</label>
+      <textarea required class="textarea js-auto-size" name="Message" placeholder="Enter your message here" rows="1"></textarea>
+    </div>
+
+    <div class="btn-wrap">
+      <button class="btn cyan" type="submit">Send Message</button>
+    </div>
+  </form>
+  <aside class="aside fr">
+    <h2>Other Ways to Get in Touch</h2>
+    <a class="tel" href="tel:07-5599-3331">Phone: 07-5599-3331</a>
+    <address class="address">56 Ourimbah Road <br>Tweed Heads NSW 2485</address>
+    <a class="map-link" href="/location">GOOGLE MAP</a>
+    <a class="mailto" href="mailto:info@aussieparking.com.au">info@aussieparking.com.au</a>
+  </aside>
+</article>
+{{end}}

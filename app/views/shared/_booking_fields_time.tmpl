@@ -1,0 +1,34 @@
+{{define "booking_fields_time"}}
+  <div class="fl fields border-box datepicker-wrapper">
+    <section class="section clearfix checkin">
+      <div class="field-wrap date fl">
+        <label>Check-in</label>
+        <input class="datepicker from" placeholder="Select Date" type="text" name="CheckInDate" value="{{with .CurrentOrder}}{{.From.Format "02/01/2006"}}{{else}}{{.Tomorrow.Format "02/01/2006"}}{{end}}">
+      </div>
+
+      <div class="field-wrap time fl">
+        <label>Arrival Time</label>
+        {{if .CurrentOrder}}
+          {{template "time_selector" (.TimeSelectorValue "ArrivalTime" (.CurrentOrder.From.Format "15:04"))}}
+        {{else}}
+          {{template "time_selector" (.TimeSelectorValue "ArrivalTime" "08:00")}}
+        {{end}}
+      </div>
+    </section>
+    <section class="section clearfix checkout">
+      <div class="field-wrap date fl">
+        <label>Check-out</label>
+        <input class="datepicker to" placeholder="Select Date" name="CheckOutDate" value="{{with .CurrentOrder}}{{.To.Format "02/01/2006"}}{{end}}">
+      </div>
+
+      <div class="field-wrap time fl">
+        <label>Return Time</label>
+        {{if .CurrentOrder}}
+          {{template "time_selector" (.TimeSelectorValue "ReturnTime" (.CurrentOrder.To.Format "15:04"))}}
+        {{else}}
+          {{template "time_selector" (.TimeSelectorValue "ReturnTime" "08:00")}}
+        {{end}}
+      </div>
+    </section>
+  </div>
+{{end}}

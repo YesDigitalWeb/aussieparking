@@ -1,0 +1,12 @@
+{{define "content"}}
+  <article class="article main">
+    {{template "booking_container" .}}
+
+    <article id="article-main" class="article wrapper clearfix">
+      <h1>{{.Data.Title}}</h1>
+      <div class="content">
+        {{to_html .Data.Content}}
+      </div>
+    </article>
+  </article>
+{{end}}

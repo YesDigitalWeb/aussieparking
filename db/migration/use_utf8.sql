@@ -1,0 +1,22 @@
+ALTER DATABASE aussie_parking CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+ALTER TABLE admin_users CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE benefit_records CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE contact_us CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE daily_reports CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE notes CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE order_items CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE orders CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE products CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE profiles CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE promotion_benefits CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE promotion_coupons CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE promotion_discounts CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE promotion_rules CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE publish_events CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE range_products CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE range_products_draft CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE ranges CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE ranges_draft CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE state_change_logs CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE users CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;

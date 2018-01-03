@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Aussie Parking</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="copyright" content="">
+    <meta name="robots" content="all">
+
+    <meta content="true" name="HandheldFriendly">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+
+    <link href="/appicon.png" rel="apple-touch-icon">
+    <link href="/appicon-x2.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="./css/core/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/core/typography.css">
+    <link rel="stylesheet" type="text/css" href="./css/core/rhyme.css">
+
+    <link rel="stylesheet" type="text/css" href="./css/global.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/form.css">
+  </head>
+
+  <header id="header" class="border-box">
+    <div class="wrapper clearfix">
+      <a id="menu-trigger" href="javascript:;"></a>
+      <section class="section brand">
+        <div class="brand-inner">
+          <a href="/">          
+            <hgroup class="hgroup">
+              <h1>AUSSIE PARKING</h1>
+              <small>Fast. Secure. Smart.</small>
+            </hgroup>
+          </a>
+        </div>
+      </section>
+      <nav id="menu" class="nav menu invisi clearfix">
+        <section class="section call fr">
+          <a class="tel" href="tel:07-5599-3331"><span>Call: </span><strong>07-5599-3331</strong></a>
+          <a class="mailto" href="mailto:">Contact us via Email</a>
+        </section>
+
+        <ul class="navigation clearfix">
+          <li class="nav-item fl"><a {{if eq .Page "BOOKINGS"}}class="cur"{{end}} href="/admin">BOOKINGS</a></li>
+          <li class="nav-item fl"><a {{if eq .Page "CAR DETAILING"}}class="cur"{{end}} href="/car_dealing">CAR DETAILING</a></li>
+          <li class="nav-item fl"><a {{if eq .Page "CONTACT US"}}class="cur"{{end}} href="/contact_us">CONTACT US</a></li>
+          <li class="nav-item fl"><a {{if eq .Page "LOCATION"}}class="cur"{{end}} href="/location">LOCATION</a></li>
+          <li class="nav-item fl"><a {{if eq .Page "ABOUT US"}}class="cur"{{end}} href="/about_us">ABOUT US</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <article id="error-page" class="article wrapper clearfix bad">
+    <section class="section fl">
+      <h1>SOMETHING WENT WRONG</h1>
+      <h2>502 BAD GATEWAY</h2>
+      <p>We are working to correct this issue. If the problem persists feel free to contact us. In the meantime, please wait a few moments and try again.</p>
+    </section>
+    <img src="500.svg">
+  </article>
+
+  <footer id="footer">
+    <div class="wrapper">
+      <ul class="clearfix">
+        <li><a href="/admin">Bookings</a></li>
+        <li><a href="/car_dealing">Car detailing</a></li>
+        <li><a href="/contact_us">Contact us</a></li>
+        <li><a href="/location">Location</a></li>
+        <li><a href="/about_us">About us</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

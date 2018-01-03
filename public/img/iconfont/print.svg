@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="18px" viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Print 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Backend" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Dashboard" sketch:type="MSArtboardGroup" transform="translate(-941.000000, -143.000000)" fill-opacity="0.540000021" fill="#000000">
+            <g id="Calling-List" sketch:type="MSLayerGroup" transform="translate(0.000000, 120.000000)">
+                <g id="Icon-Buttons" transform="translate(894.000000, 23.000000)" sketch:type="MSShapeGroup">
+                    <g id="Print-2" transform="translate(47.000000, 0.000000)">
+                        <path d="M4,15 L0,15 L0,8.00032973 C0,6.3486445 1.34054993,5 2.99420208,5 L17.0057979,5 C18.656688,5 20,6.34329338 20,8.00032973 L20,15 L16,15 L16,18 L4,18 L4,15 L4,15 Z M4,0 L4,4 L16,4 L16,0 L4,0 Z M17,9 C17.5522847,9 18,8.55228475 18,8 C18,7.44771525 17.5522847,7 17,7 C16.4477153,7 16,7.44771525 16,8 C16,8.55228475 16.4477153,9 17,9 Z M6,11 L6,16 L14,16 L14,11 L6,11 Z" id="Print"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

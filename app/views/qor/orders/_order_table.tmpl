@@ -1,0 +1,128 @@
+<section class="section filter-wrapper">
+  <div class="wrapper">
+    <div id="order-filters" class="filters clearfix">
+      <section class="section filter-wrap tomorrow clearfix">
+        {{if eq (printf "%T" .Result) "string"}}
+          <label class="heading fl">{{.Result}}</label>
+        {{end}}
+
+        <div class="dashboard-entry-filter">
+          <select name="scopes" class="select-type">
+            <option value="all">All bookings</option>
+            <option value="checkin">Check-Ins</option>
+            <option value="checkout">Check-Outs</option>
+          </select>
+
+          <div class="sum-wrapper clearfix">
+            <div class="sum sum-check-in">in: <span class="j-order-check-in"></span></div>
+            <div class="sum sum-check-out">out: <span class="j-order-check-out"></span></div>
+            <div class="sum sum-slot-available">available: <span class="j-slot-available"></span></div>
+          </div>
+        </div>
+
+        <div class="fr actions">
+          <a href="javascript:;" class="icon-print action-print" title="Print {{if eq (printf "%T" .Result) "string"}}{{.Result}}{{end}}"></a>
+        </div>
+      </section>
+      <section class="section filter-wrap today clearfix">
+        <form action="/admin/orders.json" method="GET">
+
+        <select name="scopes" class="select-type">
+          <option value="all">All bookings</option>
+          <option value="checkin">Check-Ins</option>
+          <option value="checkout">Check-Outs</option>
+        </select>
+        <span class="for">for</span>
+        <label id="date-start" class="date-wrapper">
+          <a class="date-text">TODAY</a>
+          <input name="current_date" type="text" class="datepicker invisible" value="">
+        </label>
+
+        <div class="sum-wrapper clearfix">
+          <div class="sum sum-check-in">in: <span class="j-order-check-in"></span></div>
+          <div class="sum sum-check-out">out: <span class="j-order-check-out"></span></div>
+          <div class="sum sum-slot-available">available: <span class="j-slot-available"></span></div>
+        </div>
+
+        <div class="fr actions">
+          <a href="javascript:;" class="icon-print action-print" title="Print {{if eq (printf "%T" .Result) "string"}}{{.Result}}{{end}}"></a>
+        </div>
+
+        <div class="search-form transition"><a href="javascript:;" class="icon-search"></a><input type="search" class="keyword transition" name="keyword" value="{{.Context.Request.Form.Get "keyword"}}"><a href="javascript:;" class="close-icon transition"></a></div>
+
+        </form>
+      </section>
+    </div>
+    <div class="statistics fl"></div>
+    <div class="fr actions"></div>
+  </div>
+</section>
+
+<section class="section table-wrapper" table-type="{{if eq (printf "%T" .Result) "string"}}{{.Result}}{{else}}Booking List{{end}}">
+
+<div class="table clearfix">
+  <div class="thead">
+    <!-- <div class="thr-wrapper"> -->
+      <ul class="clearfix thr-inner">
+        {{$metas := convert_sections_to_metas .Resource index_sections}}
+        {{range $index, $meta := $metas}}
+          <li class="fl th col-{{$index}}" data-col="col-{{$index}}" name="{{$meta.Name}}">
+            <a href="javascript:;" title="{{$meta.Label}}">{{$meta.Label}}</a>
+          </li>
+        {{end}}
+      </ul>
+    <!-- </div> -->
+  </div>
+
+  {{$Resource := .Resource}}
+  <!-- <div class="tbody clearfix"> -->
+    <div class="hidden order-template">
+      <li data-id="order-0" id="order-0" class="order-item transition clearfix tr">
+        <!-- <div class="tr-inner clearfix"> -->
+        {{$metas := convert_sections_to_metas .Resource index_sections}}
+          {{range $index, $meta := $metas}}
+            <span class="fl td col-{{$index}}" name="{{$meta.Name}}">
+              {{if ne $meta.Name "Notes"}}
+                <a class="data" href="javascript:;" title=""></a>
+              {{else}}
+                <a class="data" href="javascript:;">
+                  <textarea style="display:none"></textarea>
+                </a>
+              {{end}}
+            </span>
+          {{end}}
+        <!-- </div> -->
+      </li>
+    </div>
+
+    <div class="table-loader hidden">
+      <img src="/img/loader.gif">
+      <strong>Loading…</strong>
+    </div>
+
+    <ol class="tbody clearfix orders" data-scope="{{.Result}}">
+      {{range $result := get_order_table_result .}}
+      <li data-id="order-{{$result.Id}}" id="order-{{$result.Id}}" class="order-item transition clearfix tr" {{if or (eq .GetState "confirmed") (eq .GetState "cancelled")}}state="{{.GetState}}"{{end}} data-cleaning="{{.Cleaning}}" data-due="{{.Due}}" data-inout="{{.InOut}}" data-is-late-check-in-out="{{$result.IsLateCheckInOut}}">
+        <!-- <div class="tr-inner clearfix"> -->
+          {{$metas := convert_sections_to_metas $Resource index_sections}}
+          {{range $index, $meta := $metas}}
+            {{$text := raw_value_of $result $meta}}
+            <span class="fl td col-{{$index}}" name="{{$meta.Name}}">
+              {{if or (eq $meta.Name "From") (eq $meta.Name "To")}}
+                <a class="data" href="javascript:;" title="{{$text.Format "2006-01-02 15:04"}}">{{$text.Format "15:04 Jan 02"}}</a>
+              {{else if eq $meta.Name "Notes"}}
+                <a class="data {{if len $text}}has-note{{else}}add-note{{end}}" href="javascript:;">
+                  <textarea style="display:none">{{$text|to_json}}</textarea>
+                </a>
+              {{else}}
+                <a class="data" href="javascript:;" title="{{$text}}">{{$text}}</a>
+              {{end}}
+            </span>
+          {{end}}
+        <!-- </div> -->
+      </li>
+      {{end}}
+    </ol>
+  <!-- </div> -->
+</div>
+</section>

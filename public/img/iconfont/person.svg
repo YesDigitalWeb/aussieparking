@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>User Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Backend" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Dashboard" sketch:type="MSArtboardGroup" transform="translate(-442.000000, -730.000000)" fill-opacity="0.540000021" fill="#000000">
+            <g id="Entry-Details-(for-Calling-List)" sketch:type="MSLayerGroup" transform="translate(416.000000, 0.000000)">
+                <g id="Pricing-Breakdown-Unfold" transform="translate(0.000000, 452.000000)" sketch:type="MSShapeGroup">
+                    <g id="Customer-Info-2" transform="translate(24.000000, 235.000000)">
+                        <g id="User-Name" transform="translate(2.000000, 37.000000)">
+                            <path d="M10.0100023,5.99716391 C6.85453223,5.99716391 4.29357103,8.56003059 4.29357103,11.7155006 C4.29357103,14.8709707 6.85453223,17.4319319 10.0100023,17.4319319 C13.1673778,17.4319319 15.7092843,14.8709707 15.7092843,11.7155006 C15.7092843,8.56003059 13.1673778,5.99716391 10.0100023,5.99716391 Z M0,26.0012136 C0.720714219,25.9971621 19.2921411,25.9971621 19.9999981,26.0012136 C20.0064267,21.7114482 15.0165234,18.8543056 10.0150216,18.8543056 C5.01351981,18.8543056 0.00642857083,21.7114482 0,26.0012136 Z" id="User-Icon"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

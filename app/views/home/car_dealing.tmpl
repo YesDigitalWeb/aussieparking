@@ -1,0 +1,47 @@
+{{define "content"}}
+  <article id="car-detailing" class="article wrapper clearfix">
+    <h1 class="fl">Car Detailing at Aussie Parking</h1>
+    <figure class="figure fr">
+      <img src="/img/car_wash.png" class="fr">
+    </figure>
+    <section class="intro section">
+      <h2>Sit back and relax whilst you’re away</h2>
+      <p>We’ll make sure that your car is sparkling when you return. To book your level of car detailing, please select the according option when you make your booking online.</p>
+    </section>
+    <section class="section clearfix clear detailing">
+      <div class="fr detailing-lists">
+
+        <div class="detailing-list-wrapper fl">
+          <h3>Option 1<br>“No Worries Clean”</h3>
+          <h4>Exterior Clean</h4>
+          <ul class="detailing-list">
+            <li><span>“No worries” exterior clean & hand wash<span></li>
+            <li><span>Chamois dry / blow dry</span></li>
+            <li><span>Wheels cleaned</span></li>
+            <li><span>Tyre shine</span></li>
+          </ul>
+          <strong class="price">${{(index .CleanRangeProducts "Sedan-no worries").Price}} / ${{(index .CleanRangeProducts "4WD-no worries").Price}} (sedan / 4WD)</strong>
+        </div>
+
+        <div class="detailing-list-wrapper fl">
+          <h3>Option 2<br>“Bonza Clean”</h3>
+          <h4>Exterior + Interior Clean</h4>
+          <ul class="detailing-list">
+            <li><span>“Bonza” interior clean + NO WORRIES clean</span></li>
+            <li><span>Interior – vacuum, console, dashboard, door wells, boot, etc</span></li>
+            <li><span>Exterior wash, chamois dry / blow dry</span></li>
+            <li><span>Wheels cleaned</span></li>
+            <li><span>Tyre shine</span></li>
+            <li><span>Windows cleaned inside and out</span></li>
+          </ul>
+          <strong class="price">${{(index .CleanRangeProducts "Sedan-bonza").Price}} / ${{(index .CleanRangeProducts "4WD-bonza").Price}} (sedan / 4WD)</strong>
+        </div>
+
+      </div>
+
+    </section>
+    <section class="section notice">
+      <small>*Aussie Parking reserves its rights to negotiate additional charges for excessively soiled vehicles, i.e. excess dirt, baby seats, bugs, etc.</small>
+    </section>
+  </article>
+{{end}}

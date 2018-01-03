@@ -1,0 +1,21 @@
+{{define "content"}}
+  <form class="login-form" action="/admin_login" method="POST">
+    {{if .WrongPwOrEmail}}
+      <p style="color: red;">Sorry, wrong password and email combination!</p>
+    {{else}}
+      <p>Please enter your email and password</p>
+    {{end}}
+
+    <label>Email</label>
+    <div class="field-wrap">
+      <input class="text-field" type="text" name="Email">
+    </div>
+
+    <label>Password</label>
+    <div class="field-wrap">
+      <input name="Password" type="password">
+    </div>
+
+    <button type="submit" class="btn submit fr">Login</button>
+  </form>
+{{end}}

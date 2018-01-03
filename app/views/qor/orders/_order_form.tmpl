@@ -1,0 +1,244 @@
+<article id="order-form" class="form-wrapper article hidden" state="new">
+  <div class="form-inner">
+    <div class="form-header">
+      <a href="javascript:;" class="close"></a>
+      <h1 data-new-text="New Booking" data-edit-text="Booking Details">New Booking</h1>
+      <div class="paypal-ref">Booking ID: <span name="PaypalRef">––</span></div>
+    </div>
+    <div class="form-body">
+      <form id="booking-form" action="/admin/orders" method="post" class="form">
+        <section class="section confirm-wrapper">
+          <div class="sum-wrap">
+            <ul class="clearfix">
+              <li class="fl">
+                <i class="icon icon-date"></i>
+                <span>Days Booked:</span>
+                <strong name="Days">0</strong>
+              </li>
+              <li class="fl">
+                <i></i>
+                <span>Payment:</span>
+                <strong name="PaymentType">–</strong>
+              </li>
+              <li class="fl">
+                <i class="icon icon-dollar"></i>
+                <span>Total Amount:</span>
+                <strong name="Amount">––:––</strong>
+              </li>
+            </ul>
+          </div>
+
+          <div class="state-wrap clearfix hidden">
+            <div class="fr state-inner">
+              <a href="javascript:;" class="btn sub cancel-edit-states">CANCEL EDIT STATUS</a>
+              <span>Booking Status:</span>
+              <select disabled name="State">
+                <option value="pay_on_site">Unconfirmed</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="check-in">Checked-in</option>
+                <option value="check-out">Checked-out</option>
+                <option value="cancelled">Cancelled</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="confirm-order" class="clearfix j-button-panel">
+            <button type="button" data-url="/admin/orders/cancel" class="btn j-action-btn red fl" data-processing-text="Processing…" data-original-text="CANCEL BOOKING" data-finish-text="CANCELLED">CANCEL BOOKING</button>
+            <button type="button" data-url="/admin/orders/confirm" class="btn j-action-btn fr confirm" data-processing-text="Processing…" data-original-text="CONFIRM BOOKING" data-finish-text="CONFIRMED">CONFIRM BOOKING</button>
+            <button type="button" class="fr btn sub edit-status">EDIT STATUS</button>
+          </div>
+          <div id="confirm-check" class="clearfix j-button-panel">
+            <button type="button" data-url="/admin/orders/cancel" class="btn j-action-btn red fl" data-processing-text="Processing…" data-original-text="CANCEL BOOKING" data-finish-text="CANCELLED">CANCEL BOOKING</button>
+
+            <!-- Disable check in/out buttons, customer doesn't want them now. :( -->
+            <!-- <button type="button" data-url="/admin/orders/check_out" class="btn j-action-btn fr checkout" disabled="disabled" data-processing-text="Processing…" data-original-text="CHECK OUT" data-finish-text="CHECKED OUT">CHECK OUT</button>
+            <button type="button" data-url="/admin/orders/check_in" class="btn j-action-btn fr cyan checkin" data-processing-text="Processing…" data-original-text="CHECK IN" data-finish-text="CHECKED IN">CHECK IN</button> -->
+            <button type="button" class="fr btn sub edit-status">EDIT STATUS</button>
+          </div>
+          <div id="clean-order" class="clearfix j-button-panel">
+            <button type="button" data-url="/admin/orders/clean" class="btn j-action-btn fr" data-processing-text="Processing…" data-original-text="DETAILING COMPLETED" data-finish-text="DETAILING COMPLETED">DETAILING COMPLETED</button>
+          </div>
+          <div id="outsource-clean" class="clearfix j-button-panel">
+            <button type="button" data-url="/admin/orders/order_clean" class="btn j-action-btn fr" data-processing-text="Processing…" data-original-text="DETAILING BOOKED" data-finish-text="DETAILING BOOKED">DETAILING BOOKED</button>
+          </div>
+        </section>
+
+        <section class="fieldset-wrap section">
+          <fieldset class="fieldset booking-info">
+            <legend class="legend">Booking Details</legend>
+            <section class="section clearfix row datepicker-wrapper">
+              <i class="icon icon-time fl"></i>
+              <div class="fl">
+                <div class="field-wrap date fl">
+                  <label>Check-in</label>
+                  <input required class="datepicker from" placeholder="Select Date" type="text" name="CheckInDate" value="{{tomorrow.Format "02/01/2006"}}">
+                </div>
+                <div class="field-wrap time fl">
+                  <label>&nbsp;</label>
+                  {{time_selector "ArrivalTime"}}
+                </div>
+              </div>
+
+              <div class="fl">
+                <div class="field-wrap date fl">
+                  <label>Check-out</label>
+                  <input required class="datepicker to" placeholder="Select Date" type="text" name="CheckOutDate">
+                </div>
+                <div class="field-wrap time fl">
+                  <label>&nbsp;</label>
+                  {{time_selector "ReturnTime"}}
+                </div>
+              </div>
+            </section>
+
+            <section class="section clearfix row">
+              <i class="icon icon-plane fl"></i>
+              <div class="fl">
+                <div class="field-wrap flight fl">
+                  <label>Flight No.</label>
+                  <input class="text-field" name="ReturnFlight" type="text" placeholder="Flight No.">
+                </div>
+                <i class="icon icon-people fl"></i>
+                <div class="field-wrap people fl">
+                  <label>People</label>
+                  <input class="number-select" name="PeopleNum" type="number" step="1" min="1" max="99" value="1">
+                </div>
+              </div>
+
+              <div class="fl">
+                <div class="field-wrap car fl">
+                  <label>Car Detailing:</label>
+                  <select name="CleanProductId" class="select">
+                    {{range all_clean_products}}
+                      <option value="{{.Id}}">{{.Name}} ({{.CarType}})</option>
+                    {{end}}
+                    <option value="0">None</option>
+                  </select>
+                </div>
+
+                <div class="field-wrap where fl">
+                  <label>Location:</label>
+                  <select name="ParkingProductName" class="select">
+                    <option value="indoor">Indoor</option>
+                    <option value="under cover">Under cover</option>
+                    <option value="outdoor">Outdoor</option>
+                  </select>
+                </div>
+              </div>
+            </section>
+          </fieldset>
+
+          <section class="section breakdown clearfix">
+            <a class="collapse" href="javascript:;">PRICING BREAKDOWN</a>
+            <div class="collapse-body hidden clearfix">
+              <table>
+                <thead>
+                  <tr>
+                    <th width="32%">Date</th>
+                    <th width="15%">Rate</th>
+                    <th width="38%">Other Fees</th>
+                    <th width="15%">Day Total</th>
+                  </tr>
+                </thead>
+                <tbody class="j-breakdown-body">
+                </tbody>
+              </table>
+              <div class="fr breakdown-total">Total Sum: $<span class="j-breakdown-total"></span></div>
+            </div>
+          </section>
+
+          <fieldset class="fieldset customer-info">
+            <legend class="legend">Customer Info</legend>
+            <section class="section clearfix row">
+              <i class="icon icon-person fl"></i>
+              <div class="field-wrap fl first-name">
+                <input required class="text-field" type="text" name="Profile.FirstName" placeholder="First Name">
+              </div>
+              <div class="field-wrap fl family-name">
+                <input required class="text-field" type="text" name="Profile.LastName" placeholder="Family Name">
+              </div>
+            </section>
+            <section class="section clearfix row">
+              <i class="icon icon-tel fl"></i>
+              <div class="field-wrap phone fl">
+                <input class="text-field" type="tel" name="Profile.Phone" placeholder="Phone Number">
+              </div>
+              <i class="icon icon-mail fl"></i>
+              <div class="field-wrap email fl">
+                <input required class="text-field" type="email" name="User.Email" placeholder="Email">
+              </div>
+            </section>
+            <section class="section clearfix row">
+              <i class="icon icon-pin fl"></i>
+              <div class="field-wrap fl lang">
+                <input class="text-field" type="text" name="Note" placeholder="Enter Info">
+              </div>
+            </section>
+          </fieldset>
+
+          <fieldset class="fieldset car-info">
+            <legend class="legend">Other Details</legend>
+            <section class="section clearfix row">
+              <i class="icon icon-car fl"></i>
+              <div class="field-wrap fl">
+                <label>Car Make</label>
+                <input class="text-field" type="text" name="CarMake" placeholder="Car Make">
+              </div>
+              <div class="field-wrap fl">
+                <label>Car Model</label>
+                <input class="text-field" type="text" name="CarModel" placeholder="Car Model">
+              </div>
+              <div class="field-wrap fl">
+                <label>Rego</label>
+                <input class="text-field" type="text" name="CarRego" placeholder="Rego">
+              </div>
+            </section>
+          </fieldset>
+
+          <section class="section bottom">
+            <div class="sum-wrap">
+              <ul class="clearfix">
+                <li class="fl">
+                  <i class="icon icon-date"></i>
+                  <span>Days Booked:</span>
+                  <strong name="Days">0</strong>
+                </li>
+                <li class="fl">
+                  <i></i>
+                  <span>Payment:</span>
+                  <strong name="PaymentType">On Site</strong>
+                </li>
+                <li class="fl">
+                  <i class="icon icon-dollar"></i>
+                  <span>Total Amount:</span>
+                  <strong name="Amount">––:––</strong>
+                </li>
+              </ul>
+            </div>
+
+            <div class="btn-wrap clearfix">
+              <button type="submit" class="new btn cyan fr" data-processing-text="Processing…" data-original-text="CREATE BOOKING">CREATE BOOKING</button>
+              <button type="submit" class="btn cyan fr" data-processing-text="Processing…" data-original-text="SAVE CHANGES">SAVE CHANGES</button>
+              <button type="button" class="btn white fr cancel">CANCEL</button>
+            </div>
+          </section>
+        </section>
+      </form>
+    </div>
+  </div>
+</article>
+
+<div id="mask-layer" class="hidden">
+  <div class="mask transition">
+    <div class="dialog clearfix transition">
+      <h1>Unsaved Changes</h1>
+      <section class="section">
+        <p>You have made changes to this entry which haven't been saved yet. Are you sure you want to discard these changes?</p>
+      </section>
+      <section class="section clearfix">
+        <button type="button" class="fl btn sub return white">RETURN</button>
+        <button type="button" class="fr btn sub discard">DISCARD CHANGES</button>
+      </section>
+    </div>
+  </div>
+</div>

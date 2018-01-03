@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="18px" viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>car</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Backend" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Dashboard" sketch:type="MSArtboardGroup" transform="translate(-442.000000, -995.000000)" fill-opacity="0.540000021" fill="#000000">
+            <g id="Entry-Details-(for-Calling-List)" sketch:type="MSLayerGroup" transform="translate(416.000000, 0.000000)">
+                <g id="Pricing-Breakdown-Unfold" transform="translate(0.000000, 452.000000)" sketch:type="MSShapeGroup">
+                    <g id="Other-Details-2" transform="translate(24.000000, 475.000000)">
+                        <g id="Car-Details" transform="translate(2.000000, 44.000000)">
+                            <path d="M17.6888889,25.13625 C17.4666667,24.4725 16.8444444,24 16.1111111,24 L3.88888889,24 C3.15555556,24 2.54444444,24.4725 2.31111111,25.13625 L0,31.875 L0,40.875 C0,41.49375 0.5,42 1.11111111,42 L2.22222222,42 C2.83333333,42 3.33333333,41.49375 3.33333333,40.875 L3.33333333,39.75 L16.6666667,39.75 L16.6666667,40.875 C16.6666667,41.49375 17.1666667,42 17.7777778,42 L18.8888889,42 C19.5,42 20,41.49375 20,40.875 L20,31.875 L17.6888889,25.13625 L17.6888889,25.13625 Z M3.88888889,36.375 C2.96666667,36.375 2.22222222,35.62125 2.22222222,34.6875 C2.22222222,33.75375 2.96666667,33 3.88888889,33 C4.81111111,33 5.55555556,33.75375 5.55555556,34.6875 C5.55555556,35.62125 4.81111111,36.375 3.88888889,36.375 L3.88888889,36.375 Z M16.1111111,36.375 C15.1888889,36.375 14.4444444,35.62125 14.4444444,34.6875 C14.4444444,33.75375 15.1888889,33 16.1111111,33 C17.0333333,33 17.7777778,33.75375 17.7777778,34.6875 C17.7777778,35.62125 17.0333333,36.375 16.1111111,36.375 L16.1111111,36.375 Z M2.22222222,30.75 L3.88888889,25.6875 L16.1111111,25.6875 L17.7777778,30.75 L2.22222222,30.75 L2.22222222,30.75 Z" id="car"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

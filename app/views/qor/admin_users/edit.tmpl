@@ -1,0 +1,24 @@
+<script>
+  $('#new').attr('href', '{{new_resource_path .Resource}}');
+</script>
+
+<div class="wrapper">
+  <section class="admin-user-edit">
+    <h3 class="page-header">Edit Admin User</h3>
+
+    {{render "shared/errors"}}
+
+    <form class="form" action="{{url_for .Result}}" method="POST" enctype="multipart/form-data">
+      {{render_form .Result edit_sections}}
+
+      <button class="btn btn-primary cyan" type="submit">{{t "qor_admin.save" "Save"}}</button>
+      <a class="btn btn-gray" type="submit" href="/admin/admin_users">{{t "qor_admin.cancel" "Cancel"}}</a>
+    </form>
+
+    <form action="{{url_for .Result}}" method="POST">
+      <input name="_method" value="DELETE" type="hidden">
+
+      <button class="btn btn-red" type="submit">{{t "qor_admin.delete" "Delete"}}</button>
+    </form>
+  </section>
+</div>

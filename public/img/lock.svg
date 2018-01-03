@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="26px" viewBox="0 0 22 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 16</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Frontend" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="TOP-(BOOKINGS)" sketch:type="MSArtboardGroup" transform="translate(-1013.000000, -691.000000)" fill="#FFFFFF">
+            <g id="blurbs" sketch:type="MSLayerGroup" transform="translate(0.000000, 625.000000)">
+                <g id="blurb-4" transform="translate(912.000000, 48.000000)" sketch:type="MSShapeGroup">
+                    <path d="M104,28 L104,23.9937394 C104,20.6947819 106.687783,18 110.003331,18 L113.996669,18 C117.32196,18 120,20.6834885 120,23.9937394 L120,28 L121.008845,28 C122.110326,28 123,28.8927712 123,29.9940603 L123,42.0059397 C123,43.1054862 122.10853,44 121.008845,44 L102.991155,44 C101.889674,44 101,43.1072288 101,42.0059397 L101,29.9940603 C101,28.8945138 101.89147,28 102.991155,28 L104,28 Z M107.6,28 L107.6,23.6068244 C107.6,22.5043945 108.494023,21.6 109.596856,21.6 L114.403144,21.6 C115.507781,21.6 116.4,22.4984859 116.4,23.6068244 L116.4,28 L107.6,28 Z" id="Rectangle-16"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

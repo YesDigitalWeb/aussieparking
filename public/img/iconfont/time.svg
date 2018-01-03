@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Schedule</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Backend" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Dashboard" sketch:type="MSArtboardGroup" transform="translate(-442.000000, -330.000000)" fill-opacity="0.540000021" fill="#000000">
+            <g id="Entry-Details-(for-Calling-List)" sketch:type="MSLayerGroup" transform="translate(416.000000, 0.000000)">
+                <g id="Booking/Editing-Dialogue" transform="translate(0.000000, 271.000000)" sketch:type="MSShapeGroup">
+                    <g id="Booking-Details">
+                        <path d="M35.99,59 C30.47,59 26,63.48 26,69 C26,74.52 30.47,79 35.99,79 C41.52,79 46,74.52 46,69 C46,63.48 41.52,59 35.99,59 Z M36,77 C31.58,77 28,73.42 28,69 C28,64.58 31.58,61 36,61 C40.42,61 44,64.58 44,69 C44,73.42 40.42,77 36,77 Z M36.5,64 L35,64 L35,70 L40.25,73.15 L41,71.92 L36.5,69.25 L36.5,64 Z" id="Schedule"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

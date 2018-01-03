@@ -1,0 +1,2196 @@
+@import _var
+@import _icon
+@import global
+@import form
+@import "../../js/lib/calendar/fullcalendar.css"
+
+.fadeIn, .fadeOut
+  -webkit-animation-duration: 0.3s
+  animation-duration: 0.3s
+.slideInDown, .slideOutUp
+  -webkit-animation-duration: 0.25s
+  animation-duration: 0.25s
+
+body
+  background-color: #F2F2F2
+  &.calendar
+    #new
+      display: none
+  &.publish
+    #new
+      display: none
+  &.orders
+    background-color: white
+    #confirm-order
+      display: none
+    #clean-order
+      display: none
+    #outsource-clean
+      display: none
+  .btn
+    font-weight: 500
+
+.publishes
+  #new
+    display: none
+
+#dashboard
+  #order-filters
+    .tomorrow
+      display: block
+    .today
+      display: none
+
+#order-form
+  input, select
+    height: 36px
+    padding: 6px 0
+  .row
+    .time
+      width: 8rem
+    .date
+      width: 13.2rem
+    .family-name
+      width: 258px
+    .email
+      width: 220px
+  .icon
+    color: #727272
+    position: relative
+    margin-right: 18px
+  .icon-date, .icon-dollar
+    font-size: 20px
+    margin-right: 12px
+    bottom: -3px
+  .icon-time
+    font-size: 20px
+    bottom: -26px
+  .icon-plane, .icon-people
+    font-size: 14px
+    bottom: -29px
+  .icon-car
+    font-size: 18px
+    bottom: -28px
+  .icon-person, .icon-tel
+    font-size: 20px
+    bottom: -10px
+  .icon-mail
+    font-size: 16px
+    bottom: -12px
+  .icon-pin
+    width: 2rem
+    font-size: 24px
+    bottom: -8px
+
+
+#order-filters
+  .tomorrow
+    display: none
+  .today
+    display: block
+  .sum
+    border-radius: 2px
+    display: inline-block
+    font-size: 12px
+    margin-left: 8px
+    line-height: 21px
+    padding: 1px 16px 2px 16px
+    span
+      font-size: 14px
+    &.sum-check-in
+      color: #FFF
+      background-color: #009688
+    &.sum-check-out
+      color: #1D1D1D
+      background-color: #B2DFDB
+    &.sum-slot-available
+      color: #1D1D1D
+      background-color: #E0E0E0
+  .sum-wrapper
+    display: inline-block
+    font-size: 0
+    margin-left: 64px
+
+.order-item.transition
+  -webkit-transition: background-color 0.2s ease-out
+  -moz-transition: background-color 0.2s ease-out
+  -ms-transition: background-color 0.2s ease-out
+  -o-transition: background-color 0.2s ease-out
+  transition: background-color 0.2s ease-out
+
+#calendar
+  .fc-widget-header
+    border-width: 0
+    text-align: left
+    thead, tr, th, td
+      border-width: 0
+      text-align: left
+  .fc-event
+    cursor: default
+    &:hover
+      cursor: default
+    &.billing, &.discounts
+      color: #FFF
+      &:hover
+        color: #FFF
+      &.cal-last-year
+        color: #333
+        &:hover
+          color: #333
+  .cal-last-year
+    &.set-price, &.drop-off-rate
+      background-color: #F2F2F2 !important
+      border-color: #F2F2F2 !important
+    &.occupancy
+      background-color: #FFF8E1 !important
+      border-color: #FFF8E1 !important
+    &.billing
+      background-color: #BFE5E1 !important
+      border-color: #BFE5E1 !important
+    &.discounts
+      background-color: #BFE5E1 !important
+      border-color: #BFE5E1 !important
+
+#header
+  background-color: #009688
+  height: 120px
+  padding-top: 24px
+  z-index: 5
+  .wrapper
+    position: relative
+  h1
+    font-family: 'Roboto'
+    line-height: 32px
+    font-size: 24px
+    font-weight: 200
+    margin: 0
+    color: #FFF
+    background: url(/img/logo.png) -100% -100% no-repeat
+  .hgroup
+    margin-bottom: 24px
+
+.wrapper
+  width: 1024px
+  box-sizing: border-box
+  // padding: 0 12px
+
+.navigation
+  a
+    display: block
+    color: #fff
+    font-size: 14px
+    height: 38px
+    line-height: 32px
+    font-weight: 400
+    padding: 0 24px
+    &:hover
+      color: #FFF
+  .nav-item
+    &:first-child a
+      padding-left: 0
+    &:last-child a
+      padding-right: 0
+    a.cur
+      color: #FFC107
+      border-bottom: #FFC107 solid 2px
+      &:hover
+        color: #FFC107
+
+#menu
+  position: relative
+  ul
+    margin: 0 0 0 -24px
+    font-size: 14px
+    font-family: 'Roboto'
+    li
+      margin: 0
+      padding: 0
+      a, a:before
+        padding: 0 24px
+        box-sizing: content-box
+        margin: 0
+
+#new, .new-btn
+  position: relative
+  display: block
+  height: 42px
+  width: 42px
+  background-color: #FFC107
+  border-radius: 100%
+  bottom: -18px
+  margin-left: 40px
+  z-index: 2
+  box-shadow: 0 0 3px 0 rgba(0,0,0,0.16), 0 3px 3px 0 rgba(0,0,0,0.23)
+  &::after
+    content: ''
+    height: 18px
+    width: 2px
+    position: absolute
+    left: 20px
+    top: 12px
+    background-color: #FFF
+  &::before
+    content: ''
+    height: 2px
+    width: 18px
+    position: absolute
+    left: 12px
+    top: 20px
+    background-color: #FFF
+
+a.site-link
+  color: #B2DFDB
+  font-size: 12px
+  margin-left: 24px
+  padding-top: 11px
+  &:hover
+    color: #B2DFDB
+  i
+    display: inline-block
+    width: 10px
+    height: 10px
+    background: url(/img/icon-view-site.svg) center center no-repeat
+    margin-left: 8px
+
+a.logout
+  display: block
+  color: #fff
+  font-size: 14px
+  height: 38px
+  line-height: 32px
+  font-weight: 400
+  padding: 0 24px
+
+.filter-wrapper
+  height: 64px
+  position: relative
+  box-shadow: 0 0 2px 0 rgba(0,0,0, .26), 0 2px 4px 0 rgba(0,0,0, .26)
+  z-index: 2
+
+$booking-list-columns: "BookingListInOutTime", "BookingListIn/Out", "Wash", "Profile.LastName", "Profile.FirstName", "Location", "CarRego", "CarMake", "CarModel", "PeopleNum", "ReturnFlight", "PaymentType", "Notes"
+
+$checkins-checkouts-today: "InOutTime", "In/Out", "Profile.LastName", "Profile.FirstName", "Location", "CarRego", "CarMake", "CarModel", "PeopleNum", "ReturnFlight", "PaymentType", "Notes"
+
+$car-details-internal: "Cleaning", "Due", "DetailingType", "Profile.LastName", "Profile.FirstName", "Location", "PeopleNum", "PaymentType", "Days", "Notes"
+
+$clean-detailing-outsourced: "Cleaning", "From", "To", "Profile.LastName", "Profile.FirstName", "Location", "PeopleNum", "PaymentType", "Days", "Notes"
+
+$calling-list: "CallingTime", "State", "Profile.LastName", "Profile.FirstName", "Location", "PeopleNum", "Days", "Notes"
+
+@mixin order-span($list)
+  @each $i in $list
+    [name="#{$i}"]
+      display: table-cell
+      max-width: 10rem
+      padding-right: 1.6rem
+      // display: inline-block
+      // width: 1/length($list)*100%
+
+.table-wrapper
+  position: relative
+  padding-bottom: 80px
+  overflow-x: auto
+  span[name], li[name]
+    display: none
+
+
+.checkin-out-today
+  .table-wrapper
+    @include order-span($checkins-checkouts-today)
+    li[data-inout="Checked IN"] span a, li[data-inout="Checked OUT"] span a
+      color: rgba(0,0,0,0.26)
+    li[data-is-late-check-in-out="true"] span[name="InOutTime"] a
+      color: red
+
+.car-details-checkout-tomorrow
+  .table-wrapper
+    @include order-span($car-details-internal)
+    li[data-cleaning="pending"][data-due="today"] div span a
+      color: #f44336
+    li[data-cleaning="cleaned"] div span a
+      color: rgba(0,0,0,0.26)
+
+.clean-detailing
+  .table-wrapper
+    @include order-span($clean-detailing-outsourced)
+    li[data-cleaning="cleaned"], li[data-cleaning="ordered"]
+      div span a
+        color: rgba(0,0,0,0.26)
+    li[data-cleaning="ordered"][data-due="today"], li[data-cleaning="ordered"][data-due="tomorrow"]
+      div span a
+        color: #555
+
+.calling-list
+  .table-wrapper
+    @include order-span($calling-list)
+
+.booking-list
+  .table-wrapper
+    @include order-span($booking-list-columns)
+
+.table
+  margin: 0 auto
+  font-size: 14px
+  label
+    display: block
+  .thead
+  .th
+    height: 40px
+    line-height: 40px
+    font-weight: 500
+  .td
+    padding: 10px 0
+    font-weight: 300
+  .th, .td
+    box-sizing: border-box
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+    &:last-child
+      padding-right: 0
+      width: 50px !important
+  .tr
+    &:hover, &.cur
+      cursor: pointer
+      background-color: #FFE082
+  .tr-inner, .thr-wrapper
+    width: 1024px
+    margin: 0 auto
+  .thr-inner
+    display: inline-block
+    font-size: 0
+    > *
+      font-size: 1.4rem
+
+.filter-wrap
+  padding-top: 16px
+  .search-form
+    float: right
+    > *
+      vertical-align: middle
+    .icon-search
+      font-size: 1.8rem
+      color: #757575
+    .close-icon
+      display: inline-block
+      height: 1.7rem
+      width: 1.7rem
+      background: url(/img/close-button.svg) no-repeat center center
+      opacity: 0
+    input
+      box-sizing: border-box
+      color: #333
+      padding: 0 0.8rem
+      width: 0rem
+      font-size: 1.8rem
+      -webkit-transform: translate3d(0,0,0)
+      -ms-transform: translate3d(0,0,0)
+      transform: translate3d(0,0,0)
+      opacity: 0
+      &.focus
+        width: 18rem
+        opacity: 1
+        + .close-icon
+          opacity: 1
+          margin-right: 3.2rem
+
+.filters
+  font-size: 20px
+.date-wrapper
+  position: relative
+.date-text
+  border-bottom: 1px solid #333
+  line-height: 1
+  display: inline-block
+.for
+  display: inline-block
+  padding: 0 16px
+  color: #757575
+
+.form .field-wrap.lang
+  width: 49.6rem
+  .error
+    border-bottom-color: #F44336
+
+.form-wrapper
+  position: absolute
+  top: 0
+  right: 0
+  z-index: 7
+  .bottom .sum-wrap
+    display: none
+  &[state=new]
+    .form-header
+      background-color: #BEBEBE
+    .confirm-wrapper
+      display: none
+    .bottom
+      .sum-wrap
+        display: block
+      button[type="submit"]
+        display: none
+        &.new
+          display: block
+    .paypal-ref
+      display: none
+  &[state=edit], &[state=confirm]
+    .bottom
+      padding: 0 24px 16px 24px
+      background-color: transparent
+      .btn-wrap
+        margin-top: -4px
+        button
+          background-color: transparent
+          box-shadow: none
+          &[type="submit"]
+            color: #009688
+            &.new
+              display: none
+  &[state=edit]
+    .form-header
+      background-color: #B2DFDB
+  &[state=confirm]
+    .form-header
+      background-color: #FEDF88
+
+.form-inner
+  position: absolute
+  top: 0
+  right: -700px
+  width: 608px
+  box-shadow: 0 0 6px 0 rgba(0,0,0, 0.26), 0 0 16px 0 rgba(0,0,0, 0.26)
+  margin-bottom: 40px
+.form-header
+  height: 120px
+  position: relative
+  h1
+    font-size: 24px
+    font-weight: 400
+    line-height: 1
+    position: absolute
+    bottom: 38px
+    left: 24px
+  .close
+    position: absolute
+    top: 20px
+    right: 20px
+    height: 24px
+    width: 24px
+    background: transparent url(/img/close.svg) no-repeat center center
+
+.collapse
+  display: block
+  font-size: 16px
+  &:before
+    content: ''
+    display: inline-block
+    background: url(/img/trigger-arrow.svg) 0 bottom no-repeat
+    margin: 0 6px 0 -14px
+    width: 8px
+    height: 12px
+  &.open:before
+    width: 12px
+    height: 8px
+    background: url(/img/trigger-arrow.svg) 0 0 no-repeat
+    margin-left: -18px
+.form-body
+  background-color: #fff
+  label
+    color: #757575
+  .fieldset
+    padding: 20px 24px 0 24px
+  .legend
+    line-height: 1
+    color: #AAA
+    font-size: 14px
+    display: block
+    margin-bottom: 14px
+    position: relative
+    bottom: -20px
+  .breakdown
+    background-color: #EDEDED
+    .collapse
+      font-size: 12px
+      line-height: 16px
+      font-weight: 500
+      padding: 10px 0 10px 40px
+      margin-bottom: 0
+    .collapse-body
+      padding: 10px 0 20px 0
+    .breakdown-total
+      padding-right: 24px
+      font-weight: 400
+    table
+      width: 100%
+      tr
+        line-height: 16px
+        td
+          padding-bottom: 8px
+          text-align: left
+          font-size: 12px
+          font-weight: 300
+          &:first-child
+            box-sizing: border-box
+            padding-left: 40px
+          &:last-child
+            box-sizing: border-box
+            text-align: right
+            padding-right: 24px
+        th
+          padding-bottom: 10px
+          font-weight: 400
+          text-align: left
+          font-size: 12px
+          &:first-child
+            box-sizing: border-box
+            padding-left: 40px
+          &:last-child
+            box-sizing: border-box
+            text-align: right
+            padding-right: 24px
+  .btn.cyan
+    margin-left: 24px
+  .row
+    margin-bottom: 32px
+  .people
+    width: 60px
+    input
+      width: 100%
+  .car
+    width: 152px
+  .flight
+    width: 109px
+  .where
+    width: 60px
+.bottom
+  padding: 12px 24px 24px 24px
+  background-color: #EDEDED
+
+.sum-wrap
+  margin-bottom: 32px
+  color: #757575
+  span
+    font-size: 12px
+  strong
+    color: #1D1D1D
+    font-size: 16px
+    font-weight: 500
+    margin-left: 8px
+  li
+    width: 33%
+    // margin-right: 64px
+    &:last-child
+      margin-right: 0
+
+.paypal-ref
+  color: #777
+  position: absolute
+  left: 24px
+  bottom: 16px
+  font-size: 12px
+
+.customer-info
+  border-bottom: 2px solid #D8D8D8
+  .field-wrap
+    width: 214px
+.car-info
+  .field-wrap
+    width: 128px
+
+#calendar
+  .nav
+    margin-top: 32px
+    height: 16px
+    text-align: center
+    a
+      display: inline-block
+      font-weight: 500
+    .calendar-today
+      // text-decoration: underline
+    .next:after
+      display: inline-block
+      height: 12px
+      width: 10px
+      content: ''
+      background: url(/img/nav-arrow.svg) right center no-repeat
+      position: relative
+      top: 1px
+      margin-left: 8px
+    .prev:before
+      display: inline-block
+      height: 12px
+      width: 10px
+      content: ''
+      background: url(/img/nav-arrow.svg) left center no-repeat
+      position: relative
+      top: 1px
+      margin-right: 8px
+  .calendar-today
+    margin-left: -2.2em
+  h2
+    font-size: 24px
+    line-height: 32px
+    font-weight: 400
+    margin-bottom: 8px
+  .fc-widget-content.fc-row
+    min-height: 6em
+  .fc-day-header
+    font-size: 12px
+    font-weight: 300
+    color: #757575
+    padding-bottom: 10px
+  .fc-day-grid-event
+    margin: 2px 15px
+    color: #333
+    text-align: center
+    border-radius: 2px
+    &:hover
+      color: #333
+  .fc-day-number
+    font-size: 12px
+    color: #555
+    padding-right: 6px
+  .fc-basic-view tbody .fc-row
+    padding-bottom: 12px
+  .fc-day-grid-container
+    height: auto !important
+  .fc-today
+    background-color: transparent
+    position: relative
+    color: #FFF
+    &::before
+      content: ''
+      position: absolute
+      right: 0
+      top: 0
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 0 40px 40px 0
+      border-color: transparent #F44336 transparent transparent
+      z-index: -1
+
+.calendar-wrapper
+  margin-left: -24px
+  background-color: #FFF
+  padding: 24px 30px 30px 30px
+  width: 720px
+  box-shadow: 0 0 2px 0 rgba(0,0,0, 0.26), 0 2px 4px 0 rgba(0,0,0, 0.26)
+  overflow: hidden
+  margin-bottom: 24px
+  .cal-stat
+    position: relative
+    bottom: -8px
+    > small
+      font-size: 12px
+      line-height: 16px
+      margin-left: 24px
+    strong
+      font-weight: 400
+      margin-right: 8px
+  .daily-average, .total-billing
+    display: inline-block
+    border-radius: 2px
+    font-size: 14px
+    font-weight: 400
+    line-height: 21px
+    padding: 1px 8px 2px 8px
+  .daily-average
+    background-color: #B2DFDB
+  .total-billing
+    background-color: #009688
+    color: #FFF
+
+
+body.calendar
+  .datepicker-dropdown.datepicker-orient-left
+    margin-top: 6px
+    &:before
+      left: 70px
+    &:after
+      left: 71px
+
+.float-form
+  .datepicker-wrapper
+    .field-wrap.date
+      margin: 0 0 0 23px
+      width: 158px
+      font-size: 16px
+      padding: 4px 0
+      &:first-child
+        margin-left: 0
+      label
+        display: block
+        color: #757575
+        font-size: 12px
+      .datepicker
+        padding: 4px 0 2px 0
+
+#container
+  padding-bottom: 8rem
+  &.calendar
+    background-color: #F2F2F2
+
+#calendar-page
+  hr
+    background-color: #D4D4D4
+    border: none
+    height: 1px
+    width: 80%
+    margin: 24px 0 12px 0
+  .optional span
+    padding-left: 0
+    position: relative
+    bottom: -1px
+    font-size: 1.4rem
+  label
+    display: block
+    margin-bottom: 10px
+    span
+      min-width: 64px
+      border-radius: 2px
+      display: inline-block
+      padding: 0 8px 2px 8px
+      font-size: 1.2rem
+      line-height: 1.6rem
+    .set-discounts
+      background-color: #F1453D
+      color: #FFF
+    .set-price
+      background-color: #D4D4D4
+    .occupancy
+      background-color: #FFE082
+    .billing
+      background-color: #009688
+      color: #FFF
+    input
+      margin-right: 12px
+  .kind-tabs
+    font-size: 14px
+  .tab
+    a
+      display: block
+      text-transform: uppercase
+      font-weight: bold
+      box-sizing: border-box
+      padding: 12px 0
+      width: 112px
+      text-align: center
+    &:first-child
+      a
+        width: 100px
+  .cur > a
+    color: #009688
+    border-bottom: 2px solid #009688
+  .kind-tabpages
+    padding: 24px
+  h3
+    font-size: 16px
+    font-weight: normal
+    line-height: 2.5
+  .btn.adjust-price
+    box-sizing: border-box
+    margin-top: 2.5rem
+    min-width: 19rem
+  .btn.adjust-discounts
+    box-sizing: border-box
+    margin-top: 2.5rem
+    min-width: 19rem
+  sup
+    font-size: 1.4rem
+    top: -0.2rem
+  .annotation
+    box-sizing: border-box
+    margin-top: 2.4rem
+    width: 25rem
+    font-size: 1.2rem
+    color: #939393
+    padding-left: 1rem
+    sup
+      display: inline-block
+      margin-right: 0.4rem
+    strong
+      display: block
+      font-weight: 500
+      color: #777
+      line-height: 1.6rem
+      margin-left: -1rem
+    p
+      line-height: 1.6rem
+
+
+#price-form
+  margin-bottom: 64px
+  .section
+    padding: 20px 30px
+  .price-adjustment-wrap
+    padding: 0 30px
+    &.grey
+      padding-bottom: 0
+  .grey
+    background-color: #F2F2F2
+  .collapse
+    padding: 12px 0
+    font-weight: 500
+  .collapse-body
+    padding: 8px 0 16px 0
+  .group
+    margin-bottom: 12px
+    &:first-child
+      .price-label
+        padding-top: 37px
+    &:last-child
+      margin-bottom: 0
+  .section.btn-wrap
+    padding: 16px 30px
+    margin-top: 0
+    button[type="submit"]
+      margin-right: 0
+    .cancel
+      color: #111
+
+
+.calendar .price-form-wrapper,
+.calendar .discount-form-wrapper
+  top: 120px
+  right: 24px
+
+
+
+#note-form
+  .close
+    position: absolute
+    top: 20px
+    right: 20px
+    z-index: 2
+    height: 21px
+    width: 21px
+    background: transparent url(/img/close-btn.svg) no-repeat center center
+#note-form .close
+  top: 16px
+  right: 20px
+
+.price-form-wrapper, .discount-form-wrapper
+  position: absolute
+  top: 210px
+  right: 30px
+  z-index: 3
+.price-form-inner, .discount-form-inner
+  width: 414px
+  background-color: #FFF
+  box-shadow: 0 0 6px 0 rgba(0,0,0, 0.26), 0 0 16px 0 rgba(0,0,0, 0.26)
+  .section
+    padding: 30px
+
+.price-origin
+  margin-bottom: 14px
+.price-adjustment
+  .price-label
+    padding-top: 8px
+.price-label
+  padding-top: 37px
+  margin-right: 4px
+  min-width: 54px
+
+.price-inputs
+  margin-right: -100px
+  strong
+    font-size: 14px
+    line-height: 24px
+    margin-bottom: 5px
+    font-weight: normal
+    color: #222
+    margin-right: -24px
+  label
+    margin-right: 48px
+    position: relative
+    b
+      position: absolute
+      bottom: 0.7rem
+      left: -1em
+      font-size: 1.4rem
+      color: #1F1F1F
+      font-weight: normal
+    &:last-child
+      margin-right: 0
+      // strong
+      //   margin-left: -24px
+      //   margin-right: 0
+      //   text-align: right
+    > *
+      display: block
+  input
+    width: 64px
+    height: 36px
+    padding: 4px 2px 4px 10px
+    box-sizing: border-box
+    border-radius: 2px
+    box-shadow: inset 0 1px 3px 0 rgba(0,0,0, 0.26)
+
+.weekdays
+  padding-top: 20px
+.week-item
+  margin-right: 1px
+  position: relative
+  input[type=checkbox]
+    position: absolute !important
+    clip: rect(1px 1px 1px 1px)
+    clip: rect(1px, 1px, 1px, 1px)
+    opacity: 0
+    &:checked + em
+      background-color: #179588
+      color: #FFF
+      box-shadow: none
+  em
+    display: block
+    font-style: normal
+    font-size: 14px
+    padding: 5px 12px
+    background-color: #FFF
+    color: #C1C1C1
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.13), 0 2px 3px 0 rgba(0,0,0,0.26)
+
+.confirm-wrapper
+  background-color: #EDEDED
+  padding: 20px 24px
+  .btn.checkin
+    margin: 0
+    margin-right: 16px
+  .btn.red
+    background: #F44336
+    color: #FFF
+    &:disabled
+      background-color: #C4C4C4
+      color: #929292
+      box-shadow: none
+  .cancel-edit-states
+    color: #F44336
+
+.enable-special-rates
+  label
+    font-size: 14px
+    margin-bottom: 20px
+    & > *
+      vertical-align: middle
+  .time
+    display: inline-block
+    margin-left: 1rem
+    vertical-align: middle
+    background: #FFF
+    border-radius: 0.4rem
+    padding-right: 1.6rem
+    &::after
+      right: 0.8rem
+      bottom: 0.8rem
+  .time-select
+    vertical-align: middle
+    width: auto
+    height: auto
+    padding: 0 0.8rem
+  .enable-check
+    margin-right: 8px
+
+.order-item
+  &:hover
+    .add-note
+      background-image: url(/img/plus.svg)
+  &[state="cancelled"]
+    .data
+      color: #F44336
+      text-decoration: line-through
+
+ol[data-scope="Calling List (Unconfirmed Bookings)"] .order-item[state="confirmed"]
+  div span a
+    color: rgba(0,0,0,0.26)
+  &.cur, &:hover
+    background-color: #FFE082
+
+.state-wrap
+  color: #757575
+  select
+    margin-left: 0.5em
+
+.add-note
+  display: block
+  width: 24px
+  height: 24px
+  background: transparent url(/img/plus-grey.svg) no-repeat center center
+  border-radius: 2px
+  &:hover
+    background-color: #B2DFDB
+
+.has-note
+  display: block
+  width: 14px
+  height: 18px
+  background-color: #FFE082
+  border: 1px solid #FFC107
+  border-radius: 2px
+  margin-left: 4px
+
+#note-form
+  position: absolute
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 4px 8px rgba(0, 0, 0, 0.25)
+  background-color: #FFF
+  max-width: 496px
+  overflow: hidden
+  margin-bottom: 64px
+  &[state="new"]
+    .new-btn
+      display: none
+  .top
+    background-color: #FFE082
+    width: 496px
+    height: 52px
+    box-sizing: border-box
+    padding: 0 24px
+    h2
+      font-weight: 500
+      font-size: 20px
+      line-height: 52px
+  .fields
+    padding: 24px 24px 0 24px
+  textarea
+    box-shadow: 0 0 4px 0 #03A9F4, inset 0 1px 3px 0 rgba(0,0,0,0.26)
+    min-height: 90px
+    border-radius: 2px
+    padding: 8px
+    font-size: 11px
+    &[disabled]
+      box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.26)
+  .add-explanation
+    margin: 20px 0
+    label
+      display: block
+      margin-bottom: 10px
+  .btn-wrap
+    margin: 8px 0
+    [type="submit"]
+      margin-right: 0
+  .new-note
+    position: absolute
+    right: 135px
+
+.notes-wrapper
+  padding-left: 24px
+  .delete
+    margin-left: 32px
+  .pre
+    font-size: 12px
+
+.note-item
+  border-top: 1px solid #D6D6D6
+  padding: 24px 24px 16px 0
+
+.note-editor
+  display: inline-block
+  font-size: 16px
+  font-weight: normal
+  margin-right: 8px
+  display: none
+
+.note-date
+  display: inline-block
+  font-size: 12px
+
+.note-contents
+  font-size: 12px
+  color: #757575
+textarea.edit-area,
+textarea[name="Note"]
+  font-size: 14px
+  font-family: monospace, 'courier new', serif
+
+.note-action
+  margin-bottom: 10px
+  i
+    font-size: 16px
+  strong, a, span, i
+    color: #757575
+.edit-area-wrapper
+  margin-bottom: -16px
+  .save-edit
+    margin-right: 0
+
+#note-form .change-amount
+  padding-top: 6px
+  > *
+    display: inline-block
+    vertical-align: middle
+  input
+    border-radius: 2px
+    border: 1px solid #E0E0E0
+    padding: 4px
+    height: 28px
+    width: 56px
+    margin-left: 4px
+    font-size: 12px
+
+.change-amount-text
+  margin-top: 15px
+  font-weight: 700
+  em
+    margin-left: 8px
+    font-style: normal
+
+.table-loader
+  text-align: center
+  position: absolute
+  top: 10rem
+  width: 100%
+  strong
+    display: block
+    font-weight: 400
+    font-size: 2rem
+    padding-top: 1.6rem
+
+.chart-container
+  background-color: #FFF
+  padding: 24px 30px 30px 30px
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.26), 0 2px 4px 0 rgba(0, 0, 0, 0.26)
+  width: 72rem
+  margin-left: -2.4rem
+  h2
+    font-weight: 400
+    font-size: 2.4rem
+    line-height: 3.2rem
+  h3, h4
+    font-weight: 400
+    font-size: 1.2rem
+    line-height: 1.6rem
+  h4
+    margin: 1.6rem 0
+  strong
+    display: block
+    font-weight: 400
+    font-size: 2.4rem
+    line-height: 3.2rem
+
+
+#mask-layer
+  &.show
+    .mask
+      background: rgba(0,0,0,0.54)
+    .dialog
+      opacity: 1
+      -webkit-transform: translate3d(0,0,0)
+      -ms-transform: translate3d(0,0,0)
+      transform: translate3d(0,0,0)
+  .mask
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0,0,0,0)
+    z-index: 9
+    -webkit-transform: translate3d(0,0,0)
+    -ms-transform: translate3d(0,0,0)
+    transform: translate3d(0,0,0)
+    -webkit-transition-duration: 200ms
+    transition-duration: 200ms
+  .dialog
+    -webkit-transform: translate3d(0,-2rem,0)
+    -ms-transform: translate3d(0,-2rem,0)
+    transform: translate3d(0,-2rem,0)
+    opacity: 0
+    width: 28rem
+    box-sizing: border-box
+    padding: 1.6rem 2.4rem
+    margin: 18rem auto
+    background: #FFF
+    border-radius: 2px
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 4px 8px rgba(0, 0, 0, 0.25)
+    h1
+      font-size: 2rem
+      margin-bottom: 0.8rem
+    p
+      font-size: 1.6rem
+      color: #757575
+      font-weight: 300
+    .btn.fl
+      padding-left: 0
+      margin-left: 0
+    .btn.fr
+      padding-right: 0
+      margin-right: 0
+
+
+#dashboard, .dashboard
+  background: #F2F2F2
+  overflow: hidden
+  padding-top: 3.2rem
+  .chart-container
+    width: 1024px
+    margin-left: 0
+    margin-bottom: 64px
+.table-item-wrapper
+  margin-bottom: 3.2rem
+  box-shadow: 0 0 1px 0 rgba(0,0,0, 0.26), 0 1px 3px 0 rgba(0,0,0, 0.26)
+  border-radius: 3px
+  overflow: hidden
+  background: #FFF
+  .filter-wrapper
+    box-shadow: none
+    .wrapper
+      padding-left: 2.4rem
+      padding-right: 2.4rem
+  .thead
+    background: #F2F2F2
+    border-top: #E5E5E5 solid 1px
+    padding-left: 2.4rem
+    padding-right: 2.4rem
+  .tr
+    padding-left: 2.4rem
+    padding-right: 2.4rem
+
+.filter-wrap //.tomorrow, .today
+  .actions
+    > *
+      font-size: 1.8rem
+      color: #757575
+      vertical-align: middle
+
+#drafts
+  table
+    input[type="checkbox"]
+      display: inline-block
+      position: relative
+      top: -2px
+      margin-right: 4px
+
+#drafts, #admin-users, #acticles
+  .publish-layer
+    padding: 2rem 0
+  .btn.cyan
+    color: #009688
+    background-color: #FFF
+  .btn.red
+    background: #F44336
+    color: #FFF
+    margin-left: 1.6rem
+  h2
+    line-height: 6.4rem
+    font-size: 2rem
+    font-weight: 400
+  .diff a
+    color: #009688
+    font-weight: 400
+  table
+    width: 100%
+    tr
+      > td, th
+        overflow: visible
+        white-space: normal
+        > input[type="checkbox"]
+          position: relative
+          top: -2px
+          margin-right: 0.4rem
+        &:nth-child(2)
+          width: 6rem
+        &:first-child
+          width: 16rem
+          padding-left: 2.4rem
+        &:last-child
+          box-sizing: border-box
+          padding-right: 2.4rem
+          width: 8rem !important
+
+#admin-users, #acticles
+  padding-top: 3.2rem
+  table
+    tr
+      > td, th
+        &:nth-child(2),
+        &:first-child,
+        &:last-child
+          width: auto
+        a
+          display: block
+
+.admin-user-edit,
+.admin-user-new
+  margin: 3.2rem auto
+  box-shadow: 0 0 1px 0 rgba(0,0,0, 0.26), 0 1px 3px 0 rgba(0,0,0, 0.26)
+  border-radius: 3px
+  overflow: hidden
+  background: #FFF
+  padding: 2.4rem
+  width: 50rem
+  .page-header
+    font-weight: 300
+    font-size: 2.4rem
+    line-height: 3rem
+    margin-bottom: 3.2rem
+  .btn-primary
+    float: right
+  .btn-red
+    background: #F44336
+    color: #FFF
+  .btn-gray
+    color: white
+    margin-right: 10px
+    background: gray
+    float: right
+  .qor-field__show
+    display: none
+  .form-group, .mdl-textfield, .qor-field
+    margin-bottom: 3.2rem
+    label
+      color: #757575
+      font-size: 1.2rem
+      display: block
+      width: 20rem
+    select
+      display: block
+      margin-top: 1.6rem
+      min-width: 20rem
+    input, textarea
+      display: block
+      height: 3.6rem
+      padding: 0.6rem 0
+      font-size: 1.6rem
+      border-bottom: 2px solid #F2F2F2
+      width: 100%
+      &:focus
+        border-bottom-color: #009688
+
+.qor-error
+  color: red
+  margin-bottom: 15px
+
+#diffModal
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0,0,0,0.5)
+  h2
+    line-height: 6.4rem
+    font-weight: 300
+    padding: 0 2.4rem
+  .modal-content
+    width: 80rem
+    margin: 7% auto
+  .form-header
+    height: 6.4rem
+  .table-wrapper
+    padding-bottom: 0
+  .btn-wrapper
+    padding: 2rem 2.4rem
+  table
+    width: 100%
+    td, th
+      line-height: 3.2rem
+    tr
+      .th:last-child,
+      .td:last-child
+        width: auto !important
+        padding-right: 2.4rem
+      .th:first-child,
+      .td:first-child
+        padding-left: 2.4rem
+      &:hover
+        background: transparent
+        cursor: default
+      &.danger
+        background: rgba(255, 224, 130, 0.75)
+
+
+#discount-form
+  h3
+    font-weight: 500
+  .grey
+    padding: 0
+  .hgroup
+    background-color: #F2F2F2
+    margin-bottom: 0.2rem
+    padding: 1rem 1.2rem
+  .discount-item
+    background-color: #F2F2F2
+    margin-bottom: 0.2rem
+    position: relative
+    .x
+      background: url(/img/close.svg) no-repeat 1.2rem center
+      background-size: auto 1.2rem
+      width: 3.6rem
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      &:hover
+        background-color: rgba(111,111,111,0.1)
+  .discount-fields
+    padding: 1.2rem 1.2rem 1.8rem 1.2rem
+    margin-left: 3.6rem
+  .discount-field-item
+    width: 10rem
+    &:last-child
+      width: 7rem
+    span
+      display: block
+      margin-bottom: 0.4rem
+  .discount-time
+    margin-top: -0.1rem
+    margin-left: 2rem
+    width: 12rem
+    box-sizing: border-box
+    padding-bottom: 0.6rem
+    select
+      width: 100%
+      font-weight: 400
+    &:after
+      bottom: 45%
+  .discount-inputs
+    margin-top: 2rem
+    .text
+      margin-right: 0.8rem
+    > label
+      display: inline-block
+      &:last-child
+        margin-right: 0
+      input
+        line-height: 3.2rem
+        width: 4.8rem
+        text-align: center
+        border-radius: 2px
+        box-shadow: inset 0 1px 3px 0 rgba(0,0,0,.26)
+  .error
+    border-bottom-color: #F44336
+
+  .add-wrap
+    padding: 0.6rem 1.2rem
+    background: #F2F2F2
+    a
+      display: block
+      color: #009688
+      font-weight: 500
+      position: relative
+      padding-left: 16px
+      &:after
+        content: ''
+        background: #009688
+        width: 2px
+        height: 12px
+        position: absolute
+        top: 4px
+        left: 5px
+      &:before
+        content: ''
+        background: #009688
+        width: 12px
+        height: 2px
+        position: absolute
+        top: 9px
+        left: 0
+  .btn-wrap
+    margin-top: 0
+    padding: 1.2rem 0
+    .btn.sub.cancel
+      color: #212121
+
+
+#dashboard, #container.booking-list
+  .table
+    .thead
+      background-color: #F2F2F2
+    .td, .th
+      &[name="From"].show,
+      &[name="To"].show,
+      &[name="BookingListInOutTime"].show,
+      &[name="BookingListIn/Out"].show
+        display: table-cell
+
+/*============================== new table styles ==============================*/
+#dashboard, #container.booking-list
+  .table
+    display: table
+    width: 100%
+    .clearfix
+      &:after
+        display: none
+    .th, .td
+      vertical-align: middle
+    .thead
+      display: table-header-group
+      padding: 0
+      .thr-inner
+        display: table-row
+        width: 100%
+        &:before
+          content: ''
+          display: table-cell
+          width: 6.4rem
+        &:after
+          content: ''
+          display: table-cell
+          width: 6.4rem
+        > *
+          float: none
+    .tbody
+      display: table-row-group
+      > *
+        display: table-row
+        padding: 0
+        &:before
+          content: ''
+          display: table-cell
+          width: 6.4rem
+        &:after
+          content: ''
+          display: table-cell
+          width: 6.4rem
+        > *
+          float: none
+
+#dashboard
+  .table
+    .thead
+      .thr-inner
+        &:before
+          width: 1.6rem
+        &:after
+          display: none
+    .tbody
+      .order-item
+        &:before
+          width: 1.6rem
+        &:after
+          display: none
+  .table-item-wrapper
+    .filter-wrapper .wrapper
+      padding-left: 1.6rem
+    .table-wrapper
+      .td[name^="Car"], .td[name="ReturnFlight"]
+        max-width: 8rem
+      .thr-inner
+        [name="Profile.LastName"]
+          min-width: 10rem
+
+
+#container.booking-list
+  .table
+    min-width: 102.4rem
+    .th, .td
+      > .data
+        display: block
+    .td[name="PeopleNum"]
+      text-align: center
+    [name="From"], [name="To"]
+      width: 10rem
+    [name="Profile.LastName"]
+      min-width: 10rem
+    [name="From"], [name="To"]
+      padding-right: 1.6rem
+    [name="BookingListIn/Out"].hide,
+    [name="BookingListInOutTime"].hide
+      display: none
+
+
+#container.booking-list
+  .table.fixed
+    padding-top: 40px
+    .tr, .thr-inner
+      &:before,
+      &:after
+        // display: none
+    .th
+      max-width: none
+      > a
+        display: block
+    .td
+      > a
+        min-width: 6rem
+      &[name="BookingListInOutTime"]
+        > a
+          min-width: 4rem
+    [name="Notes"]
+      > a
+        min-width: 0
+    .thr-inner
+      position: fixed
+      top: 0
+      left: 0
+      z-index: 7
+      width: 100%
+      min-width: 102.4rem
+      background-color: #F2F2F2
+      box-shadow: 0 0 4px 0 rgba(0,0,0,.5)
+
+
+
+@media screen and (min-width : 320px) and (max-width : 736px)
+  html, body
+    height: 100%
+  #container.booking-list
+    .thead
+      height: auto
+  #order-form .sum-wrap li:last-child
+    width: auto
+  #note-form, a[title="Notes"], a[name="Notes"]
+    display: none !important
+  #order-form select[name=State]
+    float: right
+    margin: -1.6rem 0 1.6rem 0
+  .admin-user-edit
+    width: auto
+  #drafts, #admin-users, #acticles
+    .wrapper
+      padding: 0
+      .publish-layer
+        padding: 2rem 1.6rem
+      .filter-wrapper
+        padding: 0 1.6rem
+  #admin-users, #acticles
+    table
+      .thead
+        padding: 0
+        tr th
+          padding: 0 1.6rem
+      .tbody
+        tr td
+          height: 4.4rem
+          vertical-align: middle
+          a
+            word-wrap: break-word
+            line-height: 1.2
+  #admin-users, #acticles
+    table tr td
+      padding: 0 1.6rem
+      line-height: 4.4rem
+      &:first-child
+        padding: 0 1.6rem
+  #drafts, #dashboard, #admin-user, #diffModal
+    table tr>td,
+    table tr>th
+      padding: 0 1.6rem
+      height: 4.4rem
+      line-height: 4.4rem
+      &:first-child,
+      &:last-child
+        width: auto!important
+        padding: 0 1.6rem!important
+      input[type="checkbox"]
+        font-size: 2rem
+    .table-item-wrapper
+      .thead
+        padding: 0
+      .tr
+        padding: 0
+  #dashboard
+    .wrapper
+      padding: 0
+    .filter-wrap
+      padding: 1.6rem
+  #new
+    display: none
+  .invisi
+    position: absolute !important
+    clip: rect(1px 1px 1px 1px)
+    clip: rect(1px, 1px, 1px, 1px)
+  .wrapper
+    width: auto
+    padding: 0 1.6rem
+  .search-form
+    position: relative
+    margin-bottom: 1rem
+    &.focus
+      width: 100% !important
+    input[type="search"]
+      padding: 0 1rem
+      &.focus
+        padding: 0 2.8rem
+        width: 100% !important
+    .icon-search
+      position: absolute
+      left: 0
+      top: 0.8rem
+      z-index: 3
+    .close-icon
+      position: absolute
+      right: 0
+      top: 0.6rem
+      z-index: 2
+
+
+  .table-wrapper
+    padding-bottom: 0
+    &::before
+      background-color: transparent
+
+
+  @mixin order-td-mobile($list)
+    @each $i in $list
+      [name="#{$i}"]
+        display: block
+        max-width: 10rem
+        padding-right: 0
+
+  .checkin-out-today
+    .table-wrapper
+      @include order-td-mobile($checkins-checkouts-today)
+
+  .car-details-checkout-tomorrow
+    .table-wrapper
+      @include order-td-mobile($car-details-internal)
+
+  .clean-detailing
+    .table-wrapper
+      @include order-td-mobile($clean-detailing-outsourced)
+
+  .calling-list
+    .table-wrapper
+      @include order-td-mobile($calling-list)
+
+  .booking-list
+    .table-wrapper
+      @include order-td-mobile($booking-list-columns)
+
+  #dashboard, #container.booking-list
+    .table
+      display: block
+      border-bottom: 1px solid #DDD
+      width: 100%
+      min-width: 0
+      background-color: #FFF
+      .fl, .fr
+        float: none
+      .th, .td
+        height: 4.4rem
+        width: auto
+        overflow: hidden
+        box-sizing: border-box
+        &[name="From"].show,
+        &[name="To"].show,
+        &[name="BookingListInOutTime"].show,
+        &[name="BookingListIn/Out"].show
+          display: block
+        &[title="Notes"],
+        &[name="Notes"]
+          display: none
+      .thead
+        float: left
+        .thr-inner
+          width: auto
+          padding: 0 1.6rem
+          display: inline-block
+          &:before
+            display: none
+      .tbody
+        display: block
+        width: auto
+        position: relative
+        overflow-x: auto
+        white-space: nowrap
+      // .thr-wrapper,
+      // .tr-inner,
+      //   width: auto
+      //   padding: 0 1.6rem
+      .thr-wrapper
+        background: #F2F2F2
+      .orders
+        font-size: 0
+      .order-item
+        font-size: 1.4rem
+        border-right: 1px solid #DDD
+        padding: 0 1.6rem
+        display: inline-block
+        &:before
+          display: none
+        .add-note
+          background-color: #B2DFDB
+          background-image: url(/img/plus.svg)
+
+  .filter-wrapper
+    z-index: 2
+    min-height: 6.4rem
+    height: auto
+    .actions
+      display: none
+
+  #dashboard .checkin-out-today #order-filters .dashboard-entry-filter
+    display: block
+    margin-left: 0
+    .sum-wrapper
+      margin-left: 0
+
+
+
+  #order-filters
+    height: auto
+    .sum-wrapper
+      display: block
+      width: auto
+      margin: 1rem 0
+      .sum
+        margin: 0 0.8rem 0 0
+  #order-form
+    width: 100%
+    box-sizing: border-box
+    .flight
+      width: 11.2rem
+    .bottom
+      padding: 1.6rem
+      .btn
+        margin-bottom: 0
+    .form-inner
+      width: 100%
+      box-sizing: border-box
+      overflow: hidden
+    .icon
+      clear: left
+    .btn
+      font-size: 1.4rem
+      font-weight: normal
+      margin-bottom: 1.6rem
+    .legend
+      font-weight: 200
+      margin-bottom: 0
+      color: #747474
+    .fieldset
+      padding: 1.2rem 1.6rem
+    .row
+      margin-bottom: 0
+      > div.fl
+        margin-left: 3.6rem
+        margin-bottom: 1.6rem
+        box-sizing: border-box
+        width: 100%
+        > *:last-child
+          margin-right: 0
+      .icon-people
+        clear: none
+    .icon-time
+      bottom: -4.6rem
+    .icon-plane
+      bottom: -4.4rem
+    .field-wrap.lang
+      width: auto
+    .form-header
+      h1, .paypal-ref
+        left: 1.6rem
+    .confirm-wrapper
+      padding: 1.2rem 1.6rem 0 1.6rem
+    .sum-wrap
+      margin-bottom: 1.6rem
+      .icon
+        width: 1.8rem
+        display: inline-block
+      li
+        float: none
+        width: 49%
+        display: inline-block
+        margin-bottom: 1rem
+    .customer-info
+      .row
+        .icon-tel, .icon-mail, .icon-pin
+          width: 2rem
+          height: 2rem
+          position: relative
+          bottom: -3rem
+        .field-wrap
+          width: auto
+          float: none
+          margin: 1.6rem 0 0 3.6rem
+      .legend
+        margin-bottom: 2rem
+      .field-wrap
+        &.first-name,
+        &.family-name,
+          float: left
+          margin: 0
+          width: 40%
+        &.first-name
+          margin-right: 1.6rem
+    .car-info
+      padding-bottom: 2rem
+      .legend
+        margin-bottom: 2rem
+      .row
+        .field-wrap
+          margin: 0
+          width: 25%
+          margin-right: 1.6rem
+          box-sizing: border-box
+          &:last-child
+            margin-right: 0
+
+
+  #header
+    height: auto
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.12), 0 4px 4px 0 rgba(0,0,0,0.24)
+    z-index: 3
+    padding-top: 0
+    .brand
+      float: left
+      background-size: 2.5rem 4rem
+      margin-bottom: 0
+      .hgroup
+        padding-left: 1.6rem
+        margin-bottom: 0
+        top: 0
+        padding-top: 0.4rem
+      h1
+        font-size: 2.2rem
+      small
+        font-size: 1.6rem
+
+  #menu-trigger
+    float: left
+    display: block
+    height: 4.4rem
+    width: 4.4rem
+    margin-left: -1.6rem
+    background: url(/img/menu.svg) center center no-repeat
+
+  #menu
+    position: fixed
+    top: 0
+    left: 0
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.24)
+    width: 100%
+    height: 100%
+    background: rgba(0,0,0,0)
+    z-index: 3
+    -webkit-transform: translate3d(0,0,0)
+    -ms-transform: translate3d(0,0,0)
+    transform: translate3d(0,0,0)
+    -webkit-transition-duration: 300ms
+    transition-duration: 300ms
+    &.open
+      background: rgba(0,0,0,0.54)
+      > *
+        -webkit-transform: translate3d(20rem,0,0)
+        -ms-transform: translate3d(20rem,0,0)
+        transform: translate3d(20rem,0,0)
+    > *
+      box-sizing: border-box
+      width: 18rem
+      position: relative
+      left: -18rem
+      -webkit-transform: translate3d(0,0,0)
+      -ms-transform: translate3d(0,0,0)
+      transform: translate3d(0,0,0)
+      -webkit-transition-duration: 200ms
+      transition-duration: 200ms
+    .fl
+      float: none
+    .navigation
+      padding: 1.8rem 0 0 0
+      height: 100%
+      background-color: #FFF
+      a
+        color: #333
+        font-size: 1.4rem
+        font-weight: 400
+        line-height: 4rem
+        display: block
+        padding: 0 1.6rem
+        &.cur
+          border-bottom: 0
+          color: #009688
+          background-color: #EDEDED
+
+  #diffModal
+    z-index: 7
+    .close
+      z-index: 2
+    .modal-content
+      width: auto
+      margin: 7% 1.6rem
+    h2
+      padding: 0 2.4rem 0 1rem
+    .table
+      .th, .td
+        height: 4.4rem
+        width: auto !important
+        overflow: hidden
+        box-sizing: border-box
+        display: table-cell !important
+        padding: 0 1rem !important
+      .thead
+        float: none
+        display: table-row-group
+      .tbody
+        display: block
+        width: auto
+        position: relative
+        overflow-x: auto
+        white-space: nowrap
+        display: table-row-group
+      .thr-wrapper, .tr-inner
+        width: auto
+        padding: 0 1.6rem
+      .thr-wrapper
+        background: #F2F2F2
+
+  .calendar
+    #price-form, #discount-form
+      position: relative
+      .section
+        padding: 1.6rem
+      .btn-wrap
+        display: inline-block
+        .btn.sub
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24)
+    .price-form-wrapper, .discount-form-wrapper
+      position: fixed
+      top: 0
+      right: 0
+      width: 100%
+      height: 100%
+      .section
+        padding: 1.6rem
+    .price-form-inner, .discount-form-inner
+      width: 100%
+      height: 100%
+      overflow: auto
+      form
+        width: 41.4rem
+    .kind-tabs
+      .tab
+        width: 33%
+        &:nth-child(1)
+          width: 34%
+    .calendar-wrapper
+      width: 100%
+      margin: 0
+      padding: 1.6rem
+      float: none
+    #calendar
+      width: 100%
+    #monthly-bookings-chart
+      width: 100% !important
+      height: 16rem !important
+    #calendar-page
+      padding: 0
+      h3
+        font-size: 2rem
+      label
+        font-size: 1.4rem
+        span
+          font-size: 1.4rem
+          padding: 0.3rem 1.2rem
+      .cal-stat
+        float: none
+        bottom: 0
+        overflow: hidden
+        margin-bottom: 2rem
+        small
+          clear: both
+          float: left
+          display: block
+          margin-bottom: 1rem
+          margin-left: 0
+      .fc-view-container
+        width: 100%
+        overflow-x: auto
+      .fc-view.fc-month-view.fc-basic-view
+        width: 70rem
+      & + .wrapper
+        padding: 0
+        width: 100%
+    .chart-container
+      margin: 0
+      width: 100%
+      box-sizing: border-box
+      padding: 2rem 1.6rem
+
+    .calendar-page-wrapper
+      clear: both
+      float: none
+      overflow: hidden
+    .adjust-price
+      display: block
+      width: 100%
+      font-size: 2rem
+      height: 4.8rem
+      line-height: 4.8rem
+
+.j-input.error
+  background: rgba(255, 77, 77, 0.25)
+
+
+
+/*================= Print table style =================*/
+#print-table
+  font-family: "Helvetica Neue", Helvetica, arial, sans-serif
+  -webkit-print-color-adjust: exact
+  margin: 0 auto
+  width: 21cm
+  #print-logo
+    width: 170px
+    height: 40px
+    float: left
+    background: url(/img/logo.png) center center no-repeat
+    background-size: auto 100%
+    margin-bottom: 16px
+  h1
+    line-height: 1
+    font-weight: 300
+    font-size: 16px
+    margin-bottom: 16px
+    padding-top: 7px
+    text-align: right
+    // text-indent: -170px
+  table
+    table-layout: auto
+    width: 100%
+    font-size: 10px
+    border: 1px solid #777
+    .extra, .extra td
+      height: 33px
+    tr, th, td
+      border: 1px solid #777
+      padding: 0.4rem
+      height: auto
+      line-height: 1.25
+      box-sizing: border-box
+      color: #000
+    th
+      background-color: #CCC
+      white-space: nowrap
+      line-height: 1.75
+    td
+      max-width: 10rem
+      white-space: nowrap
+      &[name^="Car"],
+      &[name="ReturnFlight"]
+        max-width: 8rem
+        white-space: normal
+        word-break: break-all
+      &[name^="Profile"]
+        white-space: normal
+    td, th
+      &[name="CarRego"]
+        min-width: 5rem
+      &[name="In/Out"]
+        max-width: 8rem
+      &[name="Wash"],
+      &[name="PeopleNum"],
+      &[name="PaymentType"]
+        max-width: 5.6rem
+      &[name="Location"]
+        max-width: 5rem
+        white-space: normal
+    .out-of-date > [name=InOutTime]
+      color: red
+
+
+.dashboard-entry-filter
+  display: none
+
+.checkin-out-today
+  #order-filters
+    .dashboard-entry-filter
+      display: inline-block
+      margin-left: 8.8rem
+      select
+        font-size: 1.6rem
+      .sum-wrapper
+        margin-left: 1.6rem
+
+#acticles
+  table tr th:last-child
+    width: auto !important

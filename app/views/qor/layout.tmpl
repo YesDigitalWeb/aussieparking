@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+  ,-----.    ,-----.  ,------.
+  '  .-.  '  '  .-.  ' |  .--. '
+  |  | |  |  |  | |  | |  '--'.'
+  '  '-'  '-.'  '-'  ' |  |\  \
+  `-----'--' `-----'  `--' '--'
+  ENTERPRISE CONTENT MANAGEMENT SYSTEM
+  -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Aussie Parking Admin</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <meta name="copyright" content="" />
+  <meta name="robots" content="all" />
+
+  <meta content="true" name="HandheldFriendly">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+
+  <link href="/appicon.png" rel="apple-touch-icon">
+  <link href="/appicon-x2.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
+
+  <link rel="stylesheet" type="text/css" href="{{asset_path "/css/lib.css"}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset_path "/css/admin.css"}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset_path "/css/lib/redactor.css"}}" />
+
+  <script type="text/javascript">
+    {{$date := tomorrow}}
+    AUGloabl = {ServerTimeZone: {{$date.Format "-07:00"}}};
+  </script>
+  <script src="{{asset_path "/js/admin.js"}}"></script>
+
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script type="text/javascript">
+    $(function() {
+      $('textarea[data-toggle="qor.redactor"]').redactor({
+        imageUpload: '/admin/asset_managers/upload',
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <header id="header" class="border-box">
+    <div class="wrapper clearfix">
+      <a id="menu-trigger" href="javascript:;"></a>
+
+      <section class="section brand">
+        <hgroup class="hgroup clearfix">
+          <h1 class="fl">Aussie Parking</h1>
+          <a class="fl site-link" target="_blank" href="/">VIEW SITE<i></i></a>
+        </hgroup>
+      </section>
+
+      <nav id="menu" class="nav menu invisi clearfix">
+        <ul class="navigation fl">
+          <!-- <li class="nav-item fl"><a href="/admin">DASHBOARD</a></li> -->
+
+          {{if is_admin_or_staff current_user}}
+            <li class="nav-item fl"><a href="/admin/orders">BOOKING LIST</a></li>
+          {{end}}
+
+          {{if has_read_permission (get_resource "PriceChange")}}
+            <li class="nav-item fl"><a href="/admin/calendar">CALENDAR</a></li>
+          {{end}}
+
+          {{if has_update_permission (get_resource "Article")}}
+            <li class="nav-item fl"><a href="/admin/articles">ARTICLES</a></li>
+          {{end}}
+
+          {{if has_update_permission (get_resource "AdminUser")}}
+            <li class="nav-item fl"><a href="/admin/admin_users">USERS</a></li>
+          {{end}}
+        </ul>
+        <a id="new" class="fl" href="javascript:;"></a>
+        <a class="logout fr" href="/admin_logout">Logout ({{.CurrentUser.DisplayName}})</a>
+      </nav>
+    </div>
+  </header>
+
+  {{.Content}}
+
+  <footer id="footer">
+    <div class="wrapper"></div>
+  </footer>
+</body>
+</html>

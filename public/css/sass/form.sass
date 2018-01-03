@@ -1,0 +1,400 @@
+input, select, textarea
+  border: none
+  border-radius: 0
+  font-family: 'Roboto'
+select::-ms-expand
+  display: none
+
+.time-select, .number-select, .select
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  border: none
+  margin: 0
+  display: block
+  font-size: 16px
+  width: 100%
+  height: 100%
+  background: transparent
+  &:hover
+    cursor: pointer
+  &:focus
+    color: #000
+    background: transparent
+    &::-ms-value
+      background: transparent
+      color: #000
+    &:-moz-focusring
+      color: transparent
+      text-shadow: 0 0 0 #000
+
+.number-select
+  height: 36px
+  padding: 6px 0
+  color: #1F1F1F
+  width: 176px
+  box-sizing: border-box
+.datepicker
+  border-radius: 0
+.field-wrap
+  border-bottom: 2px solid #F2F2F2
+  label
+    cursor: default
+    -webkit-tap-highlight-color: transparent
+    tap-highlight-color: transparent
+
+.section > .field-wrap:last-child
+  margin-right: 0
+
+.select:hover
+  cursor: pointer
+
+.date, .time
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    right: 0
+    bottom: 26%
+    width: 1rem
+    height: 0.5rem
+    background: url(/img/arrow-down.svg) no-repeat center center
+
+.form
+  .require-notice
+    display: block
+    font-size: 12px
+    color: #F44336
+    font-style: normal
+  sup
+    font-size: 12px
+    color: #F44336
+    left: 2px
+    top: -2px
+  .required
+    label::after
+      content: '*'
+      display: inline
+      font-size: 12px
+      color: #F44336
+      left: 2px
+      top: 0
+      position: relative
+  small
+    display: block
+    font-size: 12px
+  label
+    display: block
+    color: #757575
+    font-size: 12px
+    // padding: 10px 0
+  input, select, textarea
+    // color: #C2C2C2
+    font-size: 16px
+    font-weight: 200
+    &.filled
+      color: #1F1F1F
+  textarea
+    display: block
+    width: 100%
+    box-sizing: border-box
+    padding: 6px 0
+    line-height: 1.5
+  [type="radio"]
+    display: none
+    + b
+      display: inline-block
+      width: 16px
+      height: 16px
+      line-height: 16px
+      text-align: center
+      margin-right: 8px
+      border-radius: 2em
+      border: 2px solid #979797
+      vertical-align: middle
+      background-color: #FFF
+      position: relative
+    &:checked + b
+      border-color: #009688
+      &::before
+        content: ''
+        display: inline-block
+        width: 10px
+        height: 10px
+        border-radius: 2em
+        background-color: #009688
+        position: absolute
+        top: 3px
+        left: 3px
+      & + span
+        color: #009688
+  .time-select
+    height: 30px
+  .datepicker
+    width: 100%
+    box-sizing: border-box
+    padding: 4px 0
+  .text-field
+    width: 100%
+    color: #1F1F1F
+    padding: 6px 0
+    line-height: 1.5
+  .fields
+    padding: 16px 24px 0 24px
+  .field-wrap
+    margin-right: 23px
+    -webkit-transition: border-bottom-color .1s ease-in-out
+    -moz-transition: border-bottom-color .1s ease-in-out
+    -ms-transition: border-bottom-color .1s ease-in-out
+    -o-transition: border-bottom-color .1s ease-in-out
+    transition: border-bottom-color .1s ease-in-out
+    &.date
+      width: 144px
+    &.time
+      width: 80px
+    &.focus
+      border-bottom-color: #009688
+    &.error
+      border-bottom-color: #F44336
+  .checkin
+    margin-bottom: 22px
+  .check-kind
+    label
+      color: #1F1F1F
+      font-size: 14px
+      margin-top: 19px
+    span
+      vertical-align: middle
+
+#book-rates
+  position: absolute
+  top: 24px
+  left: 0
+  width: 480px
+  background-color: #FFF
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 4px 8px rgba(0, 0, 0, 0.25)
+  z-index: 2
+  h2
+    font-weight: 500
+    font-size: 20px
+    line-height: 24px
+    padding-left: 24px
+    margin-bottom: 10px
+  .fields-wrapper
+    padding-top: 18px
+  .field-wrap
+    margin-right: 16px
+    &:last-child
+      margin-right: 0
+  .fields
+    padding-right: 16px
+  .note
+    padding: 20px 24px
+  .cost-wrapper
+    padding: 16px 24px
+  .cost-inner
+    em
+      display: block
+      font-style: normal
+      margin-bottom: 3px
+  .btn-wrap
+    margin-top: 12px
+  .check-kind
+    padding-top: 12px
+
+#order-frame-wrapper
+  position: absolute
+  top: 24px
+  left: 0
+  width: 624px
+  background-color: #FFF
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 4px 8px rgba(0, 0, 0, 0.25)
+  z-index: 3
+  .tab-headers
+    font-size: 20px
+    background-color: #F2F2F2
+    box-shadow: inset 1px -1px 3px rgba(0,0,0,0.12)
+    overflow: hidden
+    height: 56px
+  .tab
+    display: block
+    padding: 13px 24px
+    color: #B8B8B8
+    &:hover
+      cursor: default
+    &.cur
+      font-weight: 500
+      color: #212121
+      background-color: #FFF
+      box-shadow: 1px -1px 1px rgba(0,0,0,0.12), -1px -1px 1px rgba(0,0,0,0.12)
+  .fr .tab
+    padding-right: 50px
+
+.article.main
+  overflow: hidden
+
+
+#book-info, #book-order, #payment
+  .require-notice
+    text-align: right
+    margin: 10px 24px -24px 0
+  .field-wrap.date
+    margin-right: 56px
+  .fields
+    width: 424px
+    overflow: hidden
+    padding: 10px 24px 27px 24px
+  .tips
+    width: 200px
+    background-color: #FFF8E1
+    padding: 16px 24px 16px 16px
+    position: absolute
+    right: 0
+    bottom: 0
+  .contact-info
+    position: relative
+    box-shadow: inset 0 7px 8px -8px rgba(0,0,0,0.24)
+    .fields
+      padding-top: 23px
+  .text-field
+    width: 176px
+  .car-details
+    .text-field
+      width: 100%
+  .names
+    margin-bottom: 18px
+  .optional
+    margin-top: 22px
+  .details strong
+    padding: 6px 0
+
+
+.cost-wrapper
+  padding: 10px 24px 14px 24px
+  position: relative
+  background-color: #E0E0E0
+.cost-inner
+  strong
+    font-weight: 400
+    display: block
+    font-size: 24px
+    line-height: 32px
+  small
+    color: #737373
+    line-height: 16px
+.btn-wrap
+  margin-top: 6px
+
+#book-order, #payment
+  .field-wrap
+    border-bottom: none
+    strong
+      display: block
+      font-size: 16px
+      font-weight: 200
+    &.time
+      width: auto
+  .check-kind
+    margin-top: -2px
+    label
+      color: #A6A6A6
+      &.cur
+        color: #009688
+        font-weight: 500
+  .datepicker
+    padding: 3px 0
+    box-sizing: border-box
+  .time-select
+    padding: 3px 0
+    box-sizing: border-box
+
+#book-clean
+  .clean-item
+    position: relative
+    padding: 18px 0
+    min-height: 30px
+    &:last-child::after
+      height: 0px
+      visibility: hidden
+    &::after
+      height: 2px
+      background-color: #F2F2F2
+      width: 624px
+      visibility: visible
+      position: absolute
+      left: -24px
+      bottom: 0
+    b
+      position: absolute
+      left: 0
+      top: 50%
+      margin-top: -10px
+  input[type="radio"]:checked + b + .price-wrap > strong
+    color: #009688
+  .price-wrap
+    position: absolute
+    left: 48px
+    top: 50%
+    margin-top: -40px
+    &.none
+      margin: -16px 0 0 0
+    strong
+      display: block
+      color: #000
+      font-size: 20px
+      font-weight: 500
+      margin-bottom: 2px
+    span
+      display: block
+      font-weight: 200
+      margin-bottom: 6px
+    .price-select
+      display: inline-block
+      position: relative
+      padding: 2px 24px 2px 8px
+      background-color: #F1F1F1
+      border-radius: 4px
+      &:after
+        content: ''
+        position: absolute
+        right: 8px
+        bottom: 10px
+        width: 1rem
+        height: .5rem
+        background: url(/img/arrow-down.svg) center center no-repeat
+      .select
+        width: auto
+  pre, .pre
+    margin-left: 264px
+    padding-right: 16px
+    font-size: 12px
+    font-weight: 200
+    font-family: "Roboto", "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif
+
+
+#payment
+  .notice
+    padding: 24px
+    p
+      line-height: 20px
+      margin-bottom: 8px
+  .cost-inner
+    strong
+      font-weight: 400
+      display: block
+      font-size: 24px
+      line-height: 32px
+    small
+      color: #737373
+      line-height: 16px
+  .cost-wrap
+    padding: 24px
+    border-bottom: 2px solid #F2F2F2
+    &:last-child
+      border-bottom: none
+  .btn-wrap
+    margin: 0
+
+@-moz-document url-prefix()
+  .form [type="radio"] + b
+    line-height: 15px

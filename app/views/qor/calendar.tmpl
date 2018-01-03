@@ -1,0 +1,206 @@
+<article class="article calendar" id="container">
+  <div id="calendar-page" class="wrapper clearfix">
+    <section class="section fl calendar-wrapper border-box">
+      <div class="j-cal-stat fr cal-stat">
+        <small><strong>Daily Average this Month:</strong><span class="daily-average">$<span class="j-daily-average"></span></span></small>
+        <small><strong>Billing this Month:</strong><span class="total-billing">$<span class="j-total-billing"></span></span></small>
+      </div>
+      <div id="calendar">
+        <section class="section clearfix nav">
+          <a href="javascript:;" class="fl prev">PREVIOUS</a>
+          <a href="javascript:;" class="calendar-today">TODAY</a>
+          <a href="javascript:;" class="fr next">NEXT</a>
+        </section>
+      </div>
+    </section>
+
+    <section class="fl calendar-page-wrapper section">
+      <ul class="kind-tabs clearfix">
+        {{range .Result.DataTypes}}
+          <li class="fl tab {{if eq . "indoor"}}cur{{end}}" data-type="{{.}}"><a href="javascript:;">{{.}}</a></li>
+        {{end}}
+      </ul>
+
+      <ul class="kind-tabpages">
+        {{range .Result.DataTypes}}
+        <li class="tab-page {{if eq . "indoor"}}cur{{end}}">
+          <h3>Displayed Data</h3>
+          <label>
+            <input checked type="checkbox" value="discounts" class="j-cal-option">
+            <span class="set-discounts">Discounts</span>
+          </label>
+          <label>
+            <input checked type="checkbox" value="set-price" class="j-cal-option">
+            <span class="set-price">Set Price</span>
+          </label>
+          <label>
+            <input checked type="checkbox" value="occupancy" class="j-cal-option">
+            <span class="occupancy">Occupancy</span>
+          </label>
+          <label>
+            <input checked type="checkbox" value="billing" class="j-cal-option">
+            <span class="billing">Daily Billing</span>
+          </label>
+          <hr>
+          <h3>Options</h3>
+          <label class="optional">
+            <input type="checkbox" value="previous-year-data" class="j-cal-option">
+            <span>Previous Year Data</span>
+          </label>
+          <label class="optional">
+            <input type="checkbox" value="drop-off-rate" class="j-cal-option">
+            <span>Booking Abandonment Rate<sup>*</sup></span>
+          </label>
+
+          {{if has_update_permission (get_resource "PriceChange")}}
+            <div>
+              <button class="btn white adjust-price">Adjust Prices</button>
+            </div>
+            <div>
+              <button class="btn plum adjust-discounts">Adjust Discounts</button>
+            </div>
+          {{end}}
+
+          <div class="annotation clearfix">
+            <strong><sup>*</sup>Booking Abandonment Rate:</strong>
+            <p>The rate at which users who start the booking (enter dates and click “Book This”) don’t finish the process.</p>
+          </div>
+        </li>
+        {{end}}
+      </ul>
+    </section>
+  </div>
+
+  <div class="wrapper">
+    <div class="chart-container border-box">
+      <h2>KPI: Booking Rate Trend</h2>
+      <h3>Booking Rate Trend (vs. Same Month last year)</h3>
+      <!-- <strong>+5%</strong> -->
+      <h4>Monthly Bookings:</h4>
+      <canvas id="monthly-bookings-chart" width="660" height="220"></canvas>
+    </div>
+  </div>
+</article>
+
+{{if has_update_permission (get_resource "PriceChange")}}
+<article class="float-form price-form-wrapper hidden article">
+  <div class="price-form-inner">
+    <form action="/admin/range" method="POST" class="form hidden" id="price-form">
+      <a href="javascript:;" class="close"></a>
+      {{render "_calendar_date_section" .Result}}
+
+      <section class="section grey price-adjustment-wrap">
+        <div class="clearfix price-origin">
+          <div class="fl price-label">
+            <span>Price</span>
+          </div>
+          <div class="fl price-inputs">
+            {{range .Result.AllParkingProducts}}
+            <label class="fl">
+              <strong>{{.Name}}</strong>
+              <input type="hidden" name="RangeProducts.{{.SchemaIndex}}.ProductId" value="{{.Id}}">
+              <b class="fl">$</b>
+              <input type="number" name="RangeProducts.{{.SchemaIndex}}.Price" min="0" step="1" placeholder="--.--">
+            </label>
+            {{end}}
+          </div>
+        </div>
+
+        <div class="clearfix price-adjustment">
+          <a class="collapse" href="javascript:;">After Hours Adjust Prices</a>
+
+          <div class="collapse-body hidden">
+            <section class="enable-special-rates clearfix">
+              <label class="fl"><input class="enable-check" name="SpecialRateChecked" value="true" type="checkbox"><span>Set Special Rates After: </span></label>
+              <span class="time">
+                {{time_selector "SpecialTimeSince"}}
+              </span>
+            </section>
+
+            <section class="clearfix">
+              <div class="price-label fl">
+                <span>Add</span>
+              </div>
+              <div class="price-inputs fl">
+                {{range .Result.AllParkingProducts}}
+                <label class="fl">
+                  <b class="fl">$</b>
+                  <input type="number" min="0" step="1" name="RangeProducts.{{.SchemaIndex}}.SpecialPrice" placeholder="--.--">
+                </label>
+                {{end}}
+              </div>
+            </section>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="price-adjustment-wrap section">
+        <div class="clearfix price-adjustment">
+          <a class="collapse" href="javascript:;">Car Detailing Adjust Prices</a>
+
+          <div class="clearfix collapse-body hidden">
+            {{$productsMap := .Result.AllCleanProductsMap}}
+            {{$cleans := .Result.AllCleanTypes}}
+            {{range $index, $car := .Result.AllCarTypes}}
+              <section class="clearfix group">
+                <div class="fl price-label">
+                  <span>{{$car}}</span>
+                </div>
+                <div class="fl price-inputs">
+                  {{range $cleans}}
+                    <label class="fl">
+                      {{$p := index (index $productsMap $car) .}}
+                      {{if not $index}}<strong>{{.}}</strong>{{end}}
+                      <input type="hidden" name="RangeProducts.{{$p.SchemaIndex}}.ProductId" value="{{$p.Id}}">
+                      <b class="fl">$</b>
+                      <input type="number" name="RangeProducts.{{$p.SchemaIndex}}.Price" min="0" step="1" placeholder="--.--">
+                    </label>
+                  {{end}}
+                </div>
+              </section>
+            {{end}}
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section btn-wrap clearfix">
+        <button class="btn sub fr" type="submit" data-processing-text="Processing…" data-original-text="Accept">Accept</button>
+        <a href="javascript:;" class="btn sub cancel fr">Cancel</a>
+      </section>
+    </form>
+  </div>
+</article>
+
+<article class="float-form discount-form-wrapper article hidden">
+  <div class="discount-form-inner">
+    <form action="/admin/discount" method="POST" class="form" id="discount-form">
+      <a href="javascript:;" class="close"></a>
+      {{render "_calendar_date_section" .Result}}
+
+      <section class="section grey">
+        <hgroup class="hgroup">
+          <h3>Parking Discounts</h3>
+        </hgroup>
+
+        <ol id="discount-item-tpl" class="hidden">
+          {{render "_calendar_discount_list" .Result}}
+        </ol>
+
+        <ul class="discount-list">
+          {{render "_calendar_discount_list" .Result}}
+        </ul>
+      </section>
+      <section class="section grey add-wrap">
+        <a id="add-discount-item" href="javascript:;">ADD</a>
+      </section>
+
+      <section class="section btn-wrap clearfix">
+        <button class="btn sub fr" type="submit" data-processing-text="Processing…" data-original-text="Accept">Accept</button>
+        <a href="javascript:;" class="btn sub cancel fr">Cancel</a>
+      </section>
+    </form>
+  </div>
+</article>
+{{end}}

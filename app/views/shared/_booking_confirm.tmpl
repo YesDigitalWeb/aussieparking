@@ -1,0 +1,117 @@
+{{define "booking_confirm"}}
+<form id="book-order" class="article form" action="/order/confirm" method="POST">
+  <div class="clearfix check-info">
+
+    <div class="fields border-box fl datepicker-wrapper">
+      <section class="section clearfix checkin">
+        <div class="field-wrap date fl">
+          <label>Check-in</label>
+          <strong class="datepicker from" name="CheckInDate"></strong>
+        </div>
+
+        <div class="field-wrap time fl">
+          <label>Arrival Time</label>
+          <strong class="time-select" name="ArrivalTime"></strong>
+        </div>
+      </section>
+      <section class="section clearfix checkout">
+        <div class="field-wrap date fl">
+          <label>Check-out</label>
+          <strong class="datepicker to" name="CheckOutDate"></strong>
+        </div>
+
+        <div class="field-wrap time fl">
+          <label>Return Time</label>
+          <strong class="time-select" name="ReturnTime"></strong>
+        </div>
+      </section>
+    </div>
+
+    <em class="require-notice">&nbsp;</em>
+
+    <div class="check-kind fl">
+      <label name="indoor" class="cur"><span>INDOOR</span></label>
+      <label name="under cover"><span>UNDER COVER</span></label>
+      <label name="outdoor"><span>OUTDOOR</span></label>
+    </div>
+  </div>
+
+  <div class="clearfix contact-info">
+    <div class="tips border-box">
+      <small><strong>IMPORTANT</strong>: Aussie Parking’s trading hours operates to QLD time (NOT Daylight Savings)</small>
+    </div>
+
+    <div class="fields border-box fl">
+      <section class="section clearfix names">
+        <div class="field-wrap first-name fl required">
+          <label>First Name</label>
+          <strong class="text-field" name="Profile.FirstName"></strong>
+        </div>
+
+        <div class="field-wrap last-name fl required">
+          <label>Family Name</label>
+          <strong class="text-field" name="Profile.LastName"></strong>
+        </div>
+      </section>
+      <section class="section clearfix">
+        <div class="field-wrap phone fl required">
+          <label>Phone</label>
+          <strong class="text-field" name="Profile.Phone"></strong>
+        </div>
+
+        <div class="field-wrap email fl required">
+          <label>Email</label>
+          <strong class="text-field" name="User.Email"></strong>
+        </div>
+      </section>
+
+      <section class="section clearfix optional">
+        <div class="field-wrap people fl">
+          <label>No. of People</label>
+          <strong class="number-select" name="PeopleNum"></strong>
+        </div>
+
+        <div class="field-wrap flight fr">
+          <label>Return Flight No. (if known)</label>
+          <strong class="text-field" name="ReturnFlight"></strong>
+        </div>
+      </section>
+
+      <section class="section clearfix optional car-details">
+        <div class="field-wrap fl">
+          <label>CarRego</label>
+          <strong class="text-field" name="CarRego">—</strong>
+        </div>
+
+        <div class="field-wrap fl">
+          <label>CarMake</label>
+          <strong class="text-field" name="CarMake">—</strong>
+        </div>
+
+        <div class="field-wrap fl">
+          <label>CarModel</label>
+          <strong class="text-field" name="CarModel">—</strong>
+        </div>
+      </section>
+    </div>
+
+    <div class="border-box clearfix optional details fr">
+      <div class="field-wrap">
+        <label>Other Details</label>
+        <strong class="text-area" name="Note">—</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="cost-wrapper clearfix">
+    <section class="section cost-inner fl">
+      {{template "booking_order_cost"}}
+      <small>10% online payment discount included</small>
+    </section>
+    <section class="section btn-wrap fr">
+      <button class="btn sub fl back" type="button">BACK</button>
+      <button class="btn fr" type="submit" data-processing-text="Processing…" data-original-text="NEXT">NEXT</button>
+    </section>
+  </div>
+</form>
+{{end}}

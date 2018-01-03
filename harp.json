@@ -1,0 +1,38 @@
+{
+	"GOOS": "linux",
+	"GOARCH": "amd64",
+	"App": {
+		"Name":       "aussie-parking",
+		"ImportPath": "github.com/theplant/aussie",
+		"DefaultExcludeds": [
+			".git/", "tmp/", ".DS_Store",
+			"node_modules/", "_vendor/", "public/system/",
+			"*.go", "*.scss"
+		],
+		"Files":      [
+			{
+				"Path": "github.com/theplant/aussie/app/views",
+				"Delete": true
+			},
+			{
+				"Path": "github.com/theplant/aussie/public",
+				"Excludeds": ["system/*"]
+			},
+			"github.com/theplant/aussie/config",
+			{
+				"Path": "github.com/qor",
+				"Delete": true,
+				"Excludeds": ["qor-example/*", "gomerchant/*"]
+			}
+		]
+	},
+	"Servers": {
+		"prod": [{
+			"GOPATH": "/home/app/aussie-parking",
+			"ENVS": {"WEB_ENV": "prod"},
+			"User": "app",
+			"Host": "54.79.80.25",
+			"Port": ":9822"
+		}]
+	}
+}

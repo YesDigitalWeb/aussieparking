@@ -1,0 +1,100 @@
+{{define "booking_form_info"}}
+<form id="book-info" class="form" action="/order?with_profile=true">
+  <div class="clearfix check-info">
+    {{template "booking_fields_time" .}}
+    <em class="require-notice hid"><sup>*&nbsp;</sup>Required Fields</em>
+    {{template "booking_fields_kind" .CurrentOrder}}
+  </div>
+  <div class="clearfix contact-info">
+    <div class="tips border-box">
+      <small><strong>IMPORTANT</strong>: Aussie Parking’s trading hours operates to QLD time (NOT Daylight Savings)</small>
+    </div>
+    <div class="fields border-box fl">
+      <em class="require-notice invisible"><sup>*&nbsp;</sup>Required Fields</em>
+      <section class="section clearfix names">
+        {{with .CurrentOrder}}<input type="hidden" name="Profile.Id" value="{{.Profile.Id}}">{{end}}
+
+        <div class="field-wrap first-name fl required">
+          <label>First Name</label>
+          <input class="text-field" type="text" name="Profile.FirstName" {{with .CurrentOrder}}value="{{.Profile.FirstName}}"{{end}}>
+        </div>
+
+        <div class="field-wrap last-name fl required">
+          <label>Family Name</label>
+          <input class="text-field" type="text" name="Profile.LastName" {{with .CurrentOrder}}value="{{.Profile.LastName}}"{{end}}>
+        </div>
+      </section>
+      <section class="section contacts clearfix">
+        <div class="field-wrap phone fl required">
+          <label>Phone</label>
+          <input class="text-field" type="text" name="Profile.Phone" placeholder="Enter Number" {{with .CurrentOrder}}value="{{.Profile.Phone}}"{{end}}>
+        </div>
+
+        <div class="field-wrap email fl required">
+          <label>Email</label>
+          {{with .CurrentOrder}}<input type="hidden" name="User.Id" value="{{.User.Id}}">{{end}}
+          <input class="text-field" type="email" name="User.Email" placeholder="Enter Address" {{with .CurrentOrder}}value="{{.User.Email}}"{{end}}>
+        </div>
+      </section>
+
+      <section class="section clearfix optional">
+        <div class="field-wrap people fl">
+          <label>No. of People</label>
+          <input class="number-select" name="PeopleNum" value="{{with .CurrentOrder}}{{.PeopleNum}}{{else}}1{{end}}" type="number" min="1" max="99">
+        </div>
+
+        <div class="field-wrap flight fr">
+          <label>Return Flight No. (if known)</label>
+          <input class="text-field" type="text" name="ReturnFlight" {{with .CurrentOrder}}value="{{.ReturnFlight}}"{{end}} placeholder="Enter Flight No.">
+        </div>
+      </section>
+
+      <section class="section clearfix optional car-details">
+        <div class="field-wrap fl">
+          <label>CarRego</label>
+          <input class="text-field" type="text" name="CarRego" {{with .CurrentOrder}}value="{{.CarRego}}"{{end}} placeholder="—">
+        </div>
+
+        <div class="field-wrap fl">
+          <label>CarMake</label>
+          <input class="text-field" type="text" name="CarMake" {{with .CurrentOrder}}value="{{.CarMake}}"{{end}} placeholder="—">
+        </div>
+
+        <div class="field-wrap fl">
+          <label>CarModel</label>
+          <input class="text-field" type="text" name="CarModel" {{with .CurrentOrder}}value="{{.CarModel}}"{{end}} placeholder="—">
+        </div>
+      </section>
+    </div>
+
+    <div class="border-box clearfix optional details fr">
+      <div class="field-wrap">
+        <label>Other Details</label>
+        <textarea class="textarea js-auto-size" name="Note" placeholder="Enter Info" rows="1">{{with .CurrentOrder}}{{.Note}}{{end}}</textarea>
+      </div>
+    </div>
+
+    <div class="fields border-box clearfix optional clear check-agreement">
+      <label class="clearfix">
+        <input type="checkbox" id="terms-conditions-checkbox" class="fl">
+        <span><em>I have read, understand and agree to Aussie Parking’s <a target="_blank" href="/terms-and-conditions">Terms and Conditions</a>.</em><sup>*</sup></span>
+      </label>
+      <label class="clearfix">
+        <input type="checkbox" class="fl" name="SubscribeToMailChimp" {{with .CurrentOrder}}{{if .SubscribeToMailChimp}}checked{{end}}{{end}}>
+        <span>Receive emails for special campaigns and discounts.</span>
+      </label>
+    </div>
+  </div>
+
+  <div class="cost-wrapper clearfix">
+    <section class="section cost-inner fl">
+      {{template "booking_order_cost" .CurrentOrder}}
+      <small>10% online payment discount included</small>
+    </section>
+    <section class="section btn-wrap fr">
+      <button class="btn sub fl back" type="button">BACK</button>
+      <button class="btn fr" type="submit" data-processing-text="Processing…" data-original-text="NEXT">NEXT</button>
+    </section>
+  </div>
+</form>
+{{end}}

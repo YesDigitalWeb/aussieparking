@@ -1,0 +1,127 @@
+{{define "booking_payment"}}
+<article id="payment" class="article">
+  <section class="section summaries form">
+    <div class="clearfix check-info">
+      <div class="fields border-box fl datepicker-wrapper">
+        <section class="section clearfix checkin">
+          <div class="field-wrap date fl">
+            <label>Check-in</label>
+            <strong class="datepicker from" name="CheckInDate"></strong>
+          </div>
+
+          <div class="field-wrap time fl">
+            <label>Arrival Time</label>
+            <strong class="time-select" name="ArrivalTime"></strong>
+          </div>
+        </section>
+        <section class="section clearfix checkout">
+          <div class="field-wrap date fl">
+            <label>Check-out</label>
+            <strong class="datepicker to" name="CheckOutDate"></strong>
+          </div>
+
+          <div class="field-wrap time fl">
+            <label>Return Time</label>
+            <strong class="time-select" name="ReturnTime"></strong>
+          </div>
+        </section>
+      </div>
+
+      <em class="require-notice">&nbsp;</em>
+
+      <div class="check-kind fr">
+        <label name="indoor" class="cur"><span>INDOOR</span></label>
+        <label name="under cover"><span>UNDER COVER</span></label>
+        <label name="outdoor"><span>OUTDOOR</span></label>
+      </div>
+
+      <a id="change-booking" class="btn" href="javascript:;">CHANGE BOOKING</a>
+    </div>
+  </section>
+
+  <section class="section notice">
+    <p>Your reservation will be confirmed after you select one of the payment options below.</p>
+    <p>Secure online payment can be made with VISA or MASTERCARD.</p>
+  </section>
+  <section class="section cost-wrap clearfix">
+    <div class="cost-inner fl j-paypal-total">
+      {{template "booking_order_cost"}}
+      <small class="standout">10% online payment discount included.</small>
+    </div>
+    <div class="btn-wrap pay-jumper pay-online fr">
+      <button type="button" class="btn paypal">CONFIRM & PAY ONLINE</button>
+    </div>
+  </section>
+  <section class="section cost-wrap clearfix">
+    <div class="cost-inner fl j-pay-on-site-total">
+      {{template "booking_order_cost"}}
+      <small>We will contact you to confirm your payment method.</small>
+    </div>
+    <div class="btn-wrap pay-jumper pay-later fr">
+      <form id="pay-on-site" action="/order/pay_on_site" method="POST">
+        <button type="submit" class="btn pay cyan" data-processing-text="Processing…" data-original-text="PAY CASH ON SITE">CONFIRM & PAY LATER</button>
+      </form>
+    </div>
+  </section>
+</article>
+
+<article id="pay-online" class="border-box hidden">
+  <div class="notice">
+    <p>We have partnered with PayPal to offer secure and safe online payment. At the moment, we accept Visa or MasterCard credit cards.</p>
+  </div>
+  <div id="price-amount">
+    <strong>AUD <span class="value">$00.00</span></strong>
+    <small><span>10%</span> online payment discount included.</small>
+  </div>
+  <form action="/order/pay_with_paypal" method="POST" class="form">
+    <section class="section clearfix">
+      <div class="field-wrap fl credit-number required">
+        <label>Credit Card Number:</label>
+        <input class="text-field" type="number" name="Number" required placeholder="Enter Number">
+      </div>
+
+      <div class="field-wrap fl expiration-date required">
+        <label class="clear expiration-date-label">Expiration Date:</label>
+
+        <div class="date-label-wrapper">
+          <div class="select-wrap fl">
+            <select class="select" name="Month">
+              {{range $_, $i := array 1 12 1}}
+                <option value="{{printf "%02d" $i}}">{{printf "%02d" $i}}</option>
+              {{end}}
+            </select>
+          </div>
+          <b class="fl">/</b>
+          <div class="select-wrap fl">
+            <select class="select" name="Year">
+              {{range $_, $i := array two_digit_current_year 20 1}}
+                <option value="{{$i}}">{{printf "%2d" $i}}</option>
+              {{end}}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="field-wrap fl cvv required">
+        <label>CVV code:</label>
+        <input class="text-field" type="number" name="CVV2" required placeholder="Enter Code" min="0" max="999">
+      </div>
+
+      <div class="clear"></div>
+
+      <div class="field-wrap fl card-holder clear required">
+        <label>Card Holder Name:</label>
+        <input class="text-field" type="text" name="Name" required placeholder="Enter Name">
+      </div>
+    </section>
+    <section class="section btn-wrap clearfix">
+      <button type="submit" class="btn fr" data-processing-text="Processing…" data-original-text="PAY NOW">PAY NOW</button>
+      <button type="button" class="btn sub fr back">RETURN TO PREVIOUS SCREEN</button>
+    </section>
+    <section class="section loading hidden transition">
+      <img src="/img/loader.gif">
+      <strong>PROCESSING PAYMENT…</strong>
+    </section>
+  </form>
+</article>
+{{end}}

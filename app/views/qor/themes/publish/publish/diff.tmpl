@@ -1,0 +1,43 @@
+<article class="article table-item-wrapper">
+  <section class="section form-header">
+    <h2>Differences between live and draft</h2>
+    <a href="javascript:;" class="close"></a>
+  </section>
+
+  <section class="section table-wrapper">
+    <table class="table draft" state="list">
+      <thead class="thead">
+        <tr>
+          <th class="th">Column</th>
+          <th class="th">Live</th>
+          <th class="th">Draft</th>
+        </tr>
+      </thead>
+
+      {{$production := .Result.Production}}
+      {{$draft := .Result.Draft}}
+      {{$has_production := not (is_new_record $production)}}
+
+      <tbody class="tbody">
+        {{range $meta := index_metas .Result.Resource}}
+          {{$draft_value := value_of $draft $meta}}
+          {{$production_value := value_of $production $meta}}
+          {{$diff := or (not $has_production) (not (equal $production_value $draft_value))}}
+          <tr class="record-item tr transition{{if $diff}} danger{{end}}">
+            <td class="td">{{$meta.Label}}</td>
+            {{if $has_production}}
+            <td class="td">{{$production_value}}</td>
+            {{else}}
+            <td class="td"></td>
+            {{end}}
+            <td class="td">{{$draft_value}}</td>
+          </tr>
+        {{end}}
+      </tbody>
+    </table>
+  </section>
+
+  <!-- <section class="section btn-wrapper clearfix">
+    <button type="button" class="btn cancel fr" data-dismiss="modal">Close</button>
+  </section> -->
+</article>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="22px" viewBox="0 0 30 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-mail</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon-mail" sketch:type="MSLayerGroup" fill-opacity="0.239999995" fill="#000000">
+            <path d="M27.8074631,18.5429352 L20.0304319,11.0146808 L27.8074631,3.48551415 L27.8074631,18.5429352 L27.8074631,18.5429352 Z M3.51089063,19.9726408 L11.3021944,12.4517445 L11.6370188,12.7606718 C13.4804494,14.4560917 16.4063437,14.4560917 18.16323,12.7606718 L18.4980413,12.4370349 L26.3359631,19.9717218 L3.51089063,19.9717218 L3.51089063,19.9726408 L3.51089063,19.9726408 Z M2.11071938,3.486428 L9.88014562,11.0156014 L2.0955,18.5438542 L2.11071938,3.486428 L2.11071938,3.486428 Z M26.31789,2.05120723 L16.7478263,11.2941874 C15.7709494,12.2439545 14.0321475,12.2209678 13.0343344,11.2620065 L3.52230563,2.05120723 L26.31789,2.05120723 L26.31789,2.05120723 Z M0,22 L30,22 L30,0 L0,0 L0,22 L0,22 Z" id="mail-icon" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

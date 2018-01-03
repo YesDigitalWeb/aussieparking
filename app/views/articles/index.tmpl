@@ -1,0 +1,15 @@
+{{define "content"}}
+  <article id="article-list" class="wrapper clearfix">
+    <h1>Related Articles</h1>
+
+    {{range .Data}}
+      <article class="article">
+        <h2><a href="/articles/{{.Slug}}#article-main">{{.Title}}</a></h2>
+        <p>
+          {{.GetAbstract}}
+          <a href="/articles/{{.Slug}}#article-main" class="read-more-link">read more</a>
+        </p>
+      </article>
+    {{end}}
+  </article>
+{{end}}

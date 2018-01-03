@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>SEARCH 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Backend" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Dashboard" sketch:type="MSArtboardGroup" transform="translate(-894.000000, -143.000000)" fill-opacity="0.540000021" fill="#000000">
+            <g id="Calling-List" sketch:type="MSLayerGroup" transform="translate(0.000000, 120.000000)">
+                <g id="Icon-Buttons" transform="translate(894.000000, 23.000000)" sketch:type="MSShapeGroup">
+                    <g id="SEARCH-2">
+                        <path d="M10.8619898,11.3190966 L11.3483496,11.8054564 L11.3483496,12.5125631 L12.7625631,11.0983496 L12.0554563,11.0983496 L11.5499173,10.5928105 C12.4566591,9.47540442 13,8.05115424 13,6.5 C13,2.91014913 10.0898509,-1.77635684e-15 6.5,-1.77635684e-15 C2.91014913,-1.77635684e-15 0,2.91014913 0,6.5 C0,10.0898509 2.91014913,13 6.5,13 C8.1786333,13 9.7086466,12.3636822 10.8619898,11.3190966 L10.8619898,11.3190966 Z M11.3483496,12.5125631 L16.298097,17.4623106 L17.7123106,16.048097 L12.7625631,11.0983496 L11.3483496,12.5125631 Z M6.5,11 C8.98528137,11 11,8.98528137 11,6.5 C11,4.01471863 8.98528137,2 6.5,2 C4.01471863,2 2,4.01471863 2,6.5 C2,8.98528137 4.01471863,11 6.5,11 Z" id="SEARCH"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,38 @@
+{{define "booking_container"}}
+  <section class="wrapper hero section">
+    <h2>Gold Coast Airport Parking Easy!</h2>
+    <aside class="aside shuttle">
+      <div class="clearfix">
+        <strong>PARK</strong>
+        <b></b>
+        <strong>SHUTTLE</strong>
+        <b></b>
+        <strong>FLY</strong>
+      </div>
+      <small>Free shuttle transfer to and from the Airport!</small>
+    </aside>
+    <aside class="aside map-link">
+      <strong>Aussie Parking<br> Gold Coast Airport</strong>
+      <a href="/location">SHOW ON GOOGLE MAPS</a>
+    </aside>
+  </section>
+  <section id="booking-wrapper" class="wrapper">
+    {{template "booking_form_rates" .}}
+    {{template "booking_frame" .}}
+  </section>
+  <section class="section ribbon">
+    <div class="wrapper clearfix">
+      <div class="fl email">
+        <a class="mailto" href="/contact_us">Contact us via Email</a>
+      </div>
+      <div class="fr">
+        {{if .WelcomeText}}
+          {{.WelcomeText}}
+        {{else}}
+          <p>Welcome to Aussie Parking! We are the best <strong>off-site</strong> airport parking operation on the <strong>Gold Coast</strong> providing both indoor and outdoor parking. We are only a 5 min drive to <strong>Gold Coast Airport</strong>.</p>
+          <p><a class="booking-online">BOOKING ONLINE</a> is the easiest way to secure parking.</p>
+        {{end}}
+      </div>
+    </div>
+  </section>
+{{end}}

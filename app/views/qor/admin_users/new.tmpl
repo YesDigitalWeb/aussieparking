@@ -1,0 +1,18 @@
+<script>
+  $('#new').attr('href', '{{new_resource_path .Resource}}');
+</script>
+
+<div class="wrapper">
+  <section class="admin-user-new">
+    <h3 class="page-header">New Admin User</h3>
+
+    {{render "shared/errors"}}
+
+    <form class="form" action="{{url_for .Resource}}" method="POST" enctype="multipart/form-data">
+      {{render_form .Result new_sections}}
+
+      <button class="btn btn-primary cyan" type="submit">{{t "qor_admin.save" "Save"}}</button>
+      <a class="btn btn-gray" type="submit" href="/admin/admin_users">{{t "qor_admin.cancel" "Cancel"}}</a>
+    </form>
+  </section>
+</div>

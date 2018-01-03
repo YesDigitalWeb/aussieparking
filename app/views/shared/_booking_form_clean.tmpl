@@ -1,0 +1,73 @@
+{{define "booking_form_clean"}}
+<form id="book-clean" class="form" action="/order" method="post">
+  <section class="section fields">
+    <ul>
+      <li class="clearfix clean-item">
+        <label class="fl">
+          <input type="radio" name="Clean" value="no-worries">
+          <b></b>
+          <div class="price-wrap">
+            <strong>“No Worries Clean”</strong>
+            <span>Exterior Clean</span>
+            <div class="price-select">
+              <select name="no-worries" class="select">
+                <option name="Sedan-no worries" value="35">$35 (Sedan)</option>
+                <option name="4WD-no worries" value="45">$45 (4WD)</option>
+              </select>
+            </div>
+          </div>
+        </label>
+        <pre>“No worries” exterior clean & hand wash
+Chamois dry / blow dry
+Wheels cleaned
+Tyre shine</pre>
+      </li>
+      <li class="clearfix clean-item">
+        <label class="fl">
+          <input type="radio" name="Clean" value="bonza">
+          <b></b>
+          <div class="price-wrap">
+            <strong>“Bonza Clean”</strong>
+            <span>Showroom Shine</span>
+            <div class="price-select">
+              <select name="bonza" class="select">
+                <option name="Sedan-bonza" value="69">$69 (Sedan)</option>
+                <option name="4WD-bonza" value="89">$89 (4WD)</option>
+              </select>
+            </div>
+          </div>
+        </label>
+        <pre>“No Worries” + “Bonza” (options 1 + 2)
+Anti-rust treatment
+Leather clean, carpets & condition
+Plastic trim clean
+Super headlight restoration
+Air-con, anti-bacterial treatment extreme Buff & Polish
+Dash + doors + console dressed
+Mats shampooed
+For sale preparation – restoring gloss and luster</pre>
+      </li>
+      <li class="clearfix clean-item">
+        <label class="fl">
+          <input type="radio" name="Clean" value="none" checked>
+          <b></b>
+          <div class="price-wrap none">
+            <strong>None</strong>
+          </div>
+        </label>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section cost-wrapper clearfix">
+    <div class="cost-inner fl">
+      {{template "booking_order_cost"}}
+      <small>10% online payment discount included</small>
+    </div>
+    <div class="btn-wrap fr">
+      <button class="btn sub fl back" type="button">BACK</button>
+      <button class="btn fr" type="submit" data-processing-text="Processing…" data-original-text="NEXT">NEXT</button>
+    </div>
+  </section>
+</form>
+{{end}}

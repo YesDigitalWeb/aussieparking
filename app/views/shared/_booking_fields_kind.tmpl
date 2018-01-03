@@ -1,0 +1,16 @@
+{{define "booking_fields_kind"}}
+  <section class="section check-kind fl">
+    <label>
+      <input type="radio" name="ParkingProductName" value="indoor" {{if not .}}checked="checked"{{else if eq .ParkingProductName "indoor"}}checked="checked"{{end}}>
+      <b></b><span>INDOOR</span>
+    </label>
+    <label>
+      <input type="radio" name="ParkingProductName" value="under cover" {{if .}}{{if eq .ParkingProductName "under cover"}}checked="checked"{{end}}{{end}}>
+      <b></b><span>UNDER COVER</span>
+    </label>
+    <label>
+      <input type="radio" name="ParkingProductName" value="outdoor" {{if .}}{{if eq .ParkingProductName "outdoor"}}checked="checked"{{end}}{{end}}>
+      <b></b><span>OUTDOOR</span>
+    </label>
+  </section>
+{{end}}

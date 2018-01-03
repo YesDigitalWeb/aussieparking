@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="171px" height="333px" viewBox="0 0 171 333" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Sign</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="53.138146%" fx="50%" fy="53.138146%" r="64.7798978%" id="radialGradient-1">
+            <stop stop-color="#F4F4F4" offset="0%"></stop>
+            <stop stop-color="#6D6D6D" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Frontend" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="ERROR-SCREEN" sketch:type="MSArtboardGroup" transform="translate(-811.000000, -212.000000)">
+            <g id="5xx" sketch:type="MSLayerGroup" transform="translate(272.000000, 221.000000)">
+                <g id="Sign" transform="translate(534.000000, 0.000000)" sketch:type="MSShapeGroup">
+                    <rect id="Rectangle-391" stroke="#212121" stroke-width="7" fill="url(#radialGradient-1)" x="83" y="159" width="16" height="158" rx="8"></rect>
+                    <polygon id="Polygon-1" stroke-opacity="0.870000005" stroke="#000000" stroke-width="7" fill="#FFC107" points="90.5 0 168.875299 45.25 168.875299 135.75 90.5 181 12.124701 135.75 12.124701 45.25 "></polygon>
+                    <path d="M95.2324219,110.416992 L80.3330078,110.416992 L78.6933594,37.203125 L96.9433594,37.203125 L95.2324219,110.416992 Z M78.1943359,132.801758 C78.1943359,131.471022 78.4200824,130.235357 78.871582,129.094727 C79.3230817,127.954096 79.9646768,126.956059 80.7963867,126.100586 C81.6280966,125.245113 82.6498963,124.579755 83.8618164,124.104492 C85.0737365,123.629229 86.4638593,123.391602 88.0322266,123.391602 C89.6005938,123.391602 90.9907166,123.629229 92.2026367,124.104492 C93.4145568,124.579755 94.4363565,125.245113 95.2680664,126.100586 C96.0997763,126.956059 96.7413714,127.954096 97.1928711,129.094727 C97.6443707,130.235357 97.8701172,131.471022 97.8701172,132.801758 C97.8701172,135.415703 97.014657,137.601879 95.3037109,139.360352 C93.5927649,141.118824 91.168961,141.998047 88.0322266,141.998047 C84.8954921,141.998047 82.4716882,141.118824 80.7607422,139.360352 C79.0497961,137.601879 78.1943359,135.415703 78.1943359,132.801758 L78.1943359,132.801758 Z" id="!" fill-opacity="0.870000005" fill="#000000"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

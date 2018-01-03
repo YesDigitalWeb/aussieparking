@@ -1,0 +1,33 @@
+{{$orderRes := new_resource_context "order"}}
+<div id="dashboard" class="clear">
+  <div class="wrapper">
+    <article class="article table-item-wrapper clearfix checkin-out-today">
+      {{$orderRes.Render "orders/_order_table" "Checkins & Checkouts Today"}}
+    </article>
+
+    <article class="article table-item-wrapper clearfix car-details-checkout-tomorrow">
+      {{$orderRes.Render "orders/_order_table" "Car Detailing (Internal) For Checkout Due Tomorrow"}}
+    </article>
+
+    <article class="article table-item-wrapper clearfix clean-detailing">
+      {{$orderRes.Render "orders/_order_table" "Car Detailing (Outsourced)"}}
+    </article>
+
+    <article class="article table-item-wrapper clearfix calling-list">
+      {{$orderRes.Render "orders/_order_table" "Calling List (Unconfirmed Bookings)"}}
+    </article>
+  </div>
+
+  <!-- <div class="wrapper">
+    <div class="chart-container border-box">
+      <h2>KPI: Booking Rate Trend</h2>
+      <h3>Booking Rate Trend (vs. Same Month last year)</h3>
+      <strong>+5%</strong>
+      <h4>Monthly Bookings:</h4>
+      <canvas id="monthly-bookings-chart" width="964" height="300"></canvas>
+    </div>
+  </div> -->
+</div>
+
+{{$orderRes.Render "orders/_order_form" .Result}}
+{{$orderRes.Render "orders/_note_form" .Result}}

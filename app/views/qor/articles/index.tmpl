@@ -1,0 +1,45 @@
+<script>
+  $('#new').attr('href', '{{new_resource_path .Resource}}');
+</script>
+
+<div id="acticles" class="clearfix">
+  <div class="wrapper">
+    {{$Resource := .Resource}}
+      <article class="article table-item-wrapper">
+        <section class="section filter-wrapper">
+          <div class="wrapper">
+            <h2>Articles</h2>
+          </div>
+        </section>
+
+        <section class="section table-wrapper">
+          <table class="table" state="list">
+            <thead class="thead">
+              <tr>
+                {{$metas := convert_sections_to_metas $Resource index_sections}}
+                {{range $meta := $metas}}
+                <th class="th">
+                  {{meta_label $meta}}
+                </th>
+                {{end}}
+              </tr>
+            </thead>
+
+            <tbody class="tbody">
+              {{range $resource := .Result}}
+                <tr class="record-item tr transition">
+                  {{$metas := convert_sections_to_metas $Resource index_sections}}
+                  {{range $meta := $metas}}
+                    {{$text := raw_value_of $resource $meta}}
+                    <td title="{{$meta.Label}}" class="td">
+                      {{link_to $text $resource}}
+                    </td>
+                  {{end}}
+                </tr>
+              {{end}}
+            </tbody>
+          </table>
+        </section>
+      </article>
+  </div>
+</div>

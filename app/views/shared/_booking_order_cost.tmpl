@@ -1,0 +1,8 @@
+{{define "booking_order_cost"}}
+<strong class="cost">
+  <span class="currency">AUD</span>
+  <span class="j-order-amount">
+	  ${{if .}}{{printf "%.2f" .PaypalAmount}}{{else}}–––.––{{end}}
+  </span>
+</strong>
+{{end}}

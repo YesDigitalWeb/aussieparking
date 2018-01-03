@@ -1,0 +1,45 @@
+# Pakfile[.yaml]
+packages:
+- name: github.com/asaskevich/govalidator
+- name: github.com/disintegration/imaging
+- name: github.com/gin-gonic/gin
+- name: github.com/go-sql-driver/mysql
+- name: github.com/golang/oauth2
+- name: github.com/gorilla/schema
+- name: github.com/gorilla/sessions
+- name: github.com/jinzhu/gorm
+- name: github.com/jinzhu/now
+- name: github.com/lib/pq/hstore
+- name: github.com/manveru/gostalk/gostalkc
+- name: github.com/mattbaird/gochimp
+- name: github.com/mattn/go-sqlite3
+- name: github.com/stvp/rollbar
+- name: github.com/tealeg/xlsx
+- name: github.com/theplant/cldr
+- name: github.com/theplant/qor-enterprise/promotion
+- name: github.com/tommy351/gin-sessions
+- name: golang.org/x/crypto
+
+- name: github.com/qor/admin
+- name: github.com/qor/publish
+- name: github.com/qor/qor
+- name: github.com/qor/roles
+- name: github.com/qor/transition
+- name: github.com/qor/serializable_meta
+- name: github.com/qor/media_library
+
+- name: github.com/corestoreio/csfw
+- name: golang.org/x/text
+- name: github.com/gocraft/health
+- name: github.com/juju/errgo
+
+- name: github.com/kr/pretty
+
+- name: github.com/armon/go-metrics
+- name: github.com/boltdb/bolt
+- name: github.com/hashicorp/go-msgpack/codec
+- name: github.com/hashicorp/raft
+- name: github.com/hashicorp/raft-boltdb
+- name: github.com/golang/protobuf/proto
+
+- name: github.com/bom-d-van/sidekick

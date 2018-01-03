@@ -1,0 +1,29 @@
+{
+	"mail": {
+		"admin": "",
+		"host": "smtp.sendgrid.net",
+		"port": ":25",
+		"username": "",
+		"password": ""
+	},
+
+	"MailChimpListName": "account",
+
+	"db": {
+		"name": "aussie_parking_test",
+		"user": "root",
+		"password": "semaphoredb"
+	},
+
+	"cookie": {
+		"userkey": "",
+		"adminkey": ""
+	},
+
+	"paypal": {
+		"Gateway":  "https://pilot-payflowpro.paypal.com",
+		"Partner":  "PayPal",
+		"User":     "should set yours user",
+		"Password": "should set yours password"
+	}
+}

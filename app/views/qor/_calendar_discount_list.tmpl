@@ -1,0 +1,27 @@
+<li class="discount-item j-discount-item clearfix">
+  <a href="javascript:;" class="x fl"></a>
+  <div class="discount-fields">
+
+    <div class="clearfix">
+      <span class="fl">Apply discount from:</span>
+      <div class="field-wrap fl discount-time time">
+        <select class="select fl j-input" data-name="Discounts.%d.Days">
+        {{range $_, $index := times 365}}
+          <option value="{{$index}}">{{$index}} {{if gt $index 1}}days{{else}}day{{end}}</option>
+        {{end}}
+        </select>
+      </div>
+    </div>
+
+    <div class="clearfix clear discount-inputs">
+      <span class="text">Discount</span>
+      {{range .Result.AllParkingProducts}}
+        <label class="discount-field-item">
+          <span>{{.Name}}</span>
+          <input class="j-input" data-name="Discounts.%d.Products.{{.SchemaIndex}}.ProductId" type="hidden" value="{{.Id}}">
+          <input class="j-input j-non-empty" data-name="Discounts.%d.Products.{{.SchemaIndex}}.Discount" type="number" step="any">
+        </label>
+      {{end}}
+    </div>
+  </div>
+</li>
